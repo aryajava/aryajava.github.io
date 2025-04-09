@@ -149,3 +149,89 @@ input:checked+.language-slider:before {
 .fade-in {
     opacity: 1;
 }
+
+/* Header Styles */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-list a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.nav-list a:hover {
+    color: #3498db;
+}
+
+.nav-list a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #3498db;
+    transition: width 0.3s;
+}
+
+.nav-list a:hover::after {
+    width: 100%;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.mobile-menu.show {
+    max-height: 300px;
+}
+
+.mobile-menu a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem 0;
+    transition: color 0.3s;
+}
+
+.mobile-menu a:hover {
+    color: #3498db;
+}
+
+/* Hero Section */
+.hero {
+    padding-top: 100px;
+}
+
+/* Toggle Switch (update dari sebelumnya) */
+.language-switch-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    .hero {
+        padding-top: 80px;
+    }
+}
