@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="title">Portofolio Saya</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="bg-dark text-white text-center py-5">
+        <div class="container">
+            <div class="language-switch-container">
+                <span data-i18n="language.id">ID</span>
+                <label class="language-switch">
+                    <input type="checkbox" id="languageToggle">
+                    <span class="language-slider round"></span>
+                </label>
+                <span data-i18n="language.en">EN</span>
+            </div>
+            <!-- <img src="img/profile.jpg" alt="Foto Profil" class="rounded-circle mb-3" width="150"> -->
+            <h1 data-i18n="name">Nama Lengkap Anda</h1>
+            <!-- <p class="lead" data-i18n="profession">Profesi/Jabatan Anda</p> -->
+        </div>
+    </header>
+
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" data-i18n="about.title">Tentang Saya</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <p class="text-center" data-i18n="about.description">
+                        Deskripsi singkat tentang diri Anda, minat, keahlian, dan tujuan karir.
+                        Tambahkan beberapa kalimat yang menggambarkan siapa Anda dan apa yang Anda lakukan.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5" data-i18n="education.title">Riwayat Pendidikan</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <ul class="timeline">
+                        <li class="timeline-item">
+                            <h4 data-i18n="education.university.name">Nama Universitas/Institusi</h4>
+                            <p class="text-muted" data-i18n="education.university.detail">Jurusan - Gelar (Tahun Lulus)</p>
+                            <!-- <p data-i18n="education.university.description">Deskripsi singkat tentang pendidikan Anda, pencapaian, atau konsentrasi studi.</p> -->
+                        </li>
+                        <li class="timeline-item">
+                            <h4 data-i18n="education.highschool.name">Nama Sekolah Menengah</h4>
+                            <p class="text-muted" data-i18n="education.highschool.detail">Jurusan (Jika ada) - Tahun Lulus</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" data-i18n="experience.title">Pengalaman Kerja</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="experience.job1.position">Nama Posisi</h5>
+                            <h6 class="card-subtitle mb-2 text-muted" data-i18n="experience.job1.company">Nama Perusahaan</h6>
+                            <p class="card-text text-muted" data-i18n="experience.job1.period">Periode Kerja (Bulan/Tahun - Bulan/Tahun)</p>
+                            <p class="card-text" data-i18n="experience.job1.description">Deskripsi tanggung jawab dan pencapaian dalam peran ini.</p>
+                            <ul>
+                                <li data-i18n="experience.job1.responsibility1">Pencapaian atau tanggung jawab utama 1</li>
+                                <li data-i18n="experience.job1.responsibility2">Pencapaian atau tanggung jawab utama 2</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5" data-i18n="projects.title">Proyek Saya</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <!-- <img src="img/project1.jpg" class="card-img-top" alt="Nama Project 1"> -->
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="projects.project1.name">Nama Project 1</h5>
+                            <p class="card-text" data-i18n="projects.project1.description">Deskripsi singkat tentang project ini, teknologi yang digunakan, dan tujuan project.</p>
+                            
+                            <!-- <div class="mb-3">
+                                <h6 data-i18n="projects.demo">Demo Video:</h6>
+                                <video width="100%" controls>
+                                    <source src="videos/project1-demo.mp4" type="video/mp4">
+                                    Browser Anda tidak mendukung tag video.
+                                </video>
+                            </div> -->
+                            
+                            <a href="https://github.com/username/repo-project1" class="btn btn-primary" target="_blank" data-i18n="projects.viewRepo">Lihat Repository</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p>&copy; <span id="year"></span> <span data-i18n="footer.copyright">Nama Anda. All rights reserved.</span></p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/language.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
