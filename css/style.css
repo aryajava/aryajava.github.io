@@ -687,3 +687,249 @@ a {
         margin-right: 0.5rem;
     }
 }
+
+/* Projects Section */
+.projects-section {
+    padding: 5rem 0;
+    background-color: #f8f9fa;
+}
+
+.project-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.project-image-container {
+    position: relative;
+    height: 350px;
+    overflow: hidden;
+}
+
+.carousel {
+    position: static;
+}
+
+.project-carousel {
+    height: 100%;
+}
+
+.project-carousel .carousel-inner,
+.project-carousel .carousel-item,
+.project-carousel img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-carousel .carousel-control-prev,
+.project-carousel .carousel-control-next {
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+}
+
+.project-carousel .carousel-control-prev {
+    left: 15px;
+}
+
+.project-carousel .carousel-control-next {
+    right: 15px;
+}
+
+.project-carousel .carousel-control-prev-icon,
+.project-carousel .carousel-control-next-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.project-links {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.project-link {
+    color: white;
+    background-color: #3498db;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.project-link:hover {
+    background-color: #2980b9;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.project-info {
+    padding: 1.5rem;
+}
+
+.project-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+}
+
+.project-description {
+    color: #6c757d;
+    margin-bottom: 1rem;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-badge {
+    background-color: #e9ecef;
+    color: #495057;
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .project-image-container {
+        height: 200px;
+    }
+
+    .project-links {
+        padding: 0.8rem;
+    }
+
+    .project-link {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Lightbox Styles */
+#lightboxModal .modal-dialog {
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+#lightboxModal .modal-content {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+#lightboxModal .modal-body {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+
+#lightboxModal .carousel-inner {
+    max-width: 100%;
+    max-height: 100%;
+    text-align: center;
+}
+
+#lightboxModal .carousel-item img {
+    max-height: 80vh;
+    max-width: 100%;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+/* Lightbox Styles Update */
+#lightboxModal .carousel-control-prev,
+#lightboxModal .carousel-control-next {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    top: auto;
+    bottom: 20px;
+    transform: none;
+    margin: 0 10px;
+}
+
+#lightboxModal .carousel-control-prev {
+    left: 50%;
+    transform: translateX(-100px);
+}
+
+#lightboxModal .carousel-control-next {
+    right: 50%;
+    transform: translateX(100px);
+}
+
+#lightboxModal .modal-body {
+    position: relative;
+    padding-bottom: 80px;
+    /* Space for controls */
+}
+
+/* Indicator for active image */
+.lightbox-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: white;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #lightboxModal .carousel-control-prev {
+        transform: translateX(-80px);
+    }
+
+    #lightboxModal .carousel-control-next {
+        transform: translateX(80px);
+    }
+
+    #lightboxModal .carousel-control-prev,
+    #lightboxModal .carousel-control-next {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    #lightboxModal .carousel-control-prev {
+        transform: translateX(-60px);
+    }
+
+    #lightboxModal .carousel-control-next {
+        transform: translateX(60px);
+    }
+
+    #lightboxModal .carousel-control-prev,
+    #lightboxModal .carousel-control-next {
+        width: 36px;
+        height: 36px;
+    }
+}

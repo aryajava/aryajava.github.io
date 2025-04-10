@@ -104,80 +104,63 @@
         </div>
     </header>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects-section">
-        <div class="container">
-            <h2 class="section-title" data-i18n="projects.title">Proyek Unggulan</h2>
-            <p class="section-subtitle" data-i18n="projects.subtitle">Beberapa karya terbaik saya</p>
-            
-            <div class="row">
-                <!-- Project 1 -->
-                <div class="col-lg-6 mb-4">
-                    <div class="project-card">
-                        <div class="project-image-container">
-                            <img src="img/pos/1.png" alt="Point of Sale System" class="project-image">
-                            <div class="project-links">
-                                <a href="#" class="project-link" data-bs-toggle="modal" data-bs-target="#project1Modal">
-                                    <i class="fas fa-play"></i> <span data-i18n="projects.demo">Demo</span>
-                                </a>
-                                <a href="https://github.com/aryajava/pos" target="_blank" class="project-link">
-                                    <i class="fab fa-github"></i> <span data-i18n="projects.code">Code</span>
-                                </a>
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="projects.title">Proyek Unggulan</h2>
+                <p class="section-subtitle" data-i18n="projects.subtitle">Beberapa karya terbaik saya</p>
+                
+                <div class="row">
+                    <!-- Project 1 -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="project-card">
+
+                            <div class="project-image-container">
+                                <div class="project-carousel">
+                                    <div id="carouselProject1" class="carousel slide" data-bs-ride="carousel">
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img src="img/pos/1.png" class="d-block w-100" alt="POS Screenshot 1">
+                                            </div>
+                                        </div>
+                                        <!-- Remove the default carousel controls since we'll use lightbox -->
+                                    </div>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="project-link" data-bs-toggle="modal" data-bs-target="#project1Modal">
+                                        <i class="fas fa-play"></i> <span data-i18n="projects.demo">Demo</span>
+                                    </a>
+                                    <a href="https://github.com/aryajava/pos" target="_blank" class="project-link">
+                                        <i class="fab fa-github"></i> <span data-i18n="projects.code">Kode</span>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-title" data-i18n="projects.project1.title">Point of Sale System</h3>
-                            <p class="project-description" data-i18n="projects.project1.description">
-                                A web-based point of sale system for managing sales and inventory.
-                            </p>
-                            <div class="project-tech">
-                                <span class="tech-badge" data-i18n="projects.project1.techStackFe1">Bootstrap</span>
-                                <span class="tech-badge" data-i18n="projects.project1.techStackFe2">EJS (Embedded JavaScript)</span>
-                                <span class="tech-badge" data-i18n="projects.project1.techStackFe3">JQuery</span>
-                                <span class="tech-badge" data-i18n="projects.project1.techStackFe4">DataTables</span>
-                                <span class="tech-badge" data-i18n="projects.project1.techStackBe1">Node.js</span>
-                                <span class="tech-badge" data-i18n="projects.project1.techStackBe2">Express.js</span>
-                                <span class="tech-badge" data-i18n="projects.project1.techStackBe3">Socket.io</span>
-                                <span class="tech-badge" data-i18n="projects.project1.techStackBe4">PostgreSQL</span>
+                            
+                            <div class="project-info">
+                                <h3 class="project-title" data-i18n="projects.project1.title">Nama Proyek 1</h3>
+                                <p class="project-description" data-i18n="projects.project1.description">Deskripsi singkat tentang project ini, teknologi yang digunakan, dan tujuan project.</p>
+                                <div class="project-tech">
+                                    <span class="tech-badge" data-i18n="projects.project1.techStackFe1">Bootstrap</span>
+                                    <span class="tech-badge" data-i18n="projects.project1.techStackFe2">EJS (Embedded JavaScript)</span>
+                                    <span class="tech-badge" data-i18n="projects.project1.techStackFe3">JQuery</span>
+                                    <span class="tech-badge" data-i18n="projects.project1.techStackFe4">DataTables</span>
+                                    <span class="tech-badge" data-i18n="projects.project1.techStackBe1">Node.js</span>
+                                    <span class="tech-badge" data-i18n="projects.project1.techStackBe2">Express.js</span>
+                                    <span class="tech-badge" data-i18n="projects.project1.techStackBe3">Socket.io</span>
+                                    <span class="tech-badge" data-i18n="projects.project1.techStackBe4">PostgreSQL</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Project 2 -->
-                <!-- <div class="col-lg-6 mb-4">
-                    <div class="project-card">
-                        <div class="project-image-container">
-                            <img src="" alt="Project 2" class="project-image">
-                            <div class="project-links">
-                                <a href="#" class="project-link" data-bs-toggle="modal" data-bs-target="#project2Modal">
-                                    <i class="fas fa-play"></i> <span data-i18n="projects.demo">Demo</span>
-                                </a>
-                                <a href="https://github.com/aryajava/project2" target="_blank" class="project-link">
-                                    <i class="fab fa-github"></i> <span data-i18n="projects.code">Kode</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-title" data-i18n="projects.project2.title">Nama Proyek 2</h3>
-                            <p class="project-description" data-i18n="projects.project2.description">Deskripsi singkat tentang proyek dan teknologi yang digunakan.</p>
-                            <div class="project-tech">
-                                <span class="tech-badge">Python</span>
-                                <span class="tech-badge">Django</span>
-                                <span class="tech-badge">PostgreSQL</span>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
+                <div class="text-center mt-4">
+                    <a href="https://github.com/aryajava" target="_blank" class="btn btn-outline-primary">
+                        <span data-i18n="projects.viewAll">Lihat Semua Proyek di GitHub</span> <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                </div>
             </div>
-            
-            <div class="text-center mt-4">
-                <a href="https://github.com/aryajava" target="_blank" class="btn btn-outline-primary">
-                    <span data-i18n="projects.viewAll">Lihat Semua Proyek di GitHub</span> <i class="fas fa-arrow-right ms-2"></i>
-                </a>
-            </div>
-        </div>
-    </section>
+        </section>
 
     <!-- Skills Section -->
     <section id="skills" class="skills-section bg-light">
@@ -419,6 +402,32 @@
             </div>
         </div>
     </div>
+
+        <!-- Lightbox Modal -->
+        <div class="modal fade" id="lightboxModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl">
+                <div class="modal-content bg-transparent border-0">
+                    <div class="modal-header border-0">
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <div id="lightboxCarousel" class="carousel slide" data-bs-interval="false">
+                            <div class="carousel-inner" id="lightboxCarouselInner">
+                                <!-- Images will be inserted here dynamically -->
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#lightboxCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#lightboxCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     
     <div class="modal fade" id="project2Modal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">

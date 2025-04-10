@@ -86,3 +86,120 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// Initialize project image carousels
+document.addEventListener('DOMContentLoaded', function() {
+    // Auto-rotate carousels
+    const carousels = document.querySelectorAll('.project-carousel .carousel');
+    carousels.forEach(carousel => {
+        new bootstrap.Carousel(carousel, {
+            interval: 5000, // 5 detik
+            ride: 'carousel',
+            wrap: true,
+            pause: 'hover'
+        });
+    });
+    
+    // Hover effect for project cards
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            const carousel = this.querySelector('.carousel');
+            if (carousel) {
+                bootstrap.Carousel.getInstance(carousel).pause();
+            }
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            const carousel = this.querySelector('.carousel');
+            if (carousel) {
+                bootstrap.Carousel.getInstance(carousel).cycle();
+            }
+        });
+    });
+});
+
+// Lightbox functionality
+function initLightbox() {
+    // Get all project carousels
+    const projectCarousels = document.querySelectorAll('.project-carousel .carousel');
+    
+    projectCarousels.forEach(carousel => {
+        // Get all images from this carousel
+        const images = carousel.querySelectorAll('.carousel-item img');
+        const carouselId = carousel.id;
+        
+        // Add click event to each image
+        images.forEach((img, index) => {
+            img.style.cursor = 'pointer';
+            img.addEventListener('click', function() {
+                openLightbox(carouselId, index);
+            });
+        });
+    });
+    
+    // Function to open lightbox
+    // Update the openLightbox function
+    function openLightbox(carouselId, startIndex) {
+        const lightboxModal = new bootstrap.Modal(document.getElementById('lightboxModal'));
+        const lightboxCarouselInner = document.getElementById('lightboxCarouselInner');
+        const sourceCarousel = document.getElementById(carouselId);
+        const images = sourceCarousel.querySelectorAll('.carousel-item img');
+        
+        // Clear previous content
+        lightboxCarouselInner.innerHTML = '';
+        
+        // Add indicator container
+        const indicator = document.createElement('div');
+        indicator.className = 'lightbox-indicator';
+        indicator.id = 'lightboxIndicator';
+        
+        // Add images to lightbox
+        images.forEach((img, index) => {
+            const carouselItem = document.createElement('div');
+            carouselItem.className = `carousel-item ${index === startIndex ? 'active' : ''}`;
+            
+            const lightboxImg = document.createElement('img');
+            lightboxImg.src = img.src;
+            lightboxImg.className = 'img-fluid';
+            lightboxImg.alt = img.alt;
+            
+            carouselItem.appendChild(lightboxImg);
+            lightboxCarouselInner.appendChild(carouselItem);
+        });
+        
+        // Add indicator to modal
+        document.querySelector('#lightboxModal .modal-body').appendChild(indicator);
+        
+        // Initialize lightbox carousel
+        const lightboxCarousel = new bootstrap.Carousel(document.getElementById('lightboxCarousel'), {
+            interval: false
+        });
+        
+        // Update indicator on slide
+        document.getElementById('lightboxCarousel').addEventListener('slid.bs.carousel', function() {
+            const activeIndex = Array.from(this.querySelectorAll('.carousel-item')).findIndex(item => 
+                item.classList.contains('active')
+            );
+            document.getElementById('lightboxIndicator').textContent = `${activeIndex + 1} / ${images.length}`;
+        });
+        
+        // Show lightbox
+        lightboxModal.show();
+        
+        // Go to clicked image and set initial indicator
+        lightboxCarousel.to(startIndex);
+        document.getElementById('lightboxIndicator').textContent = `${startIndex + 1} / ${images.length}`;
+        
+        // Remove indicator when modal is hidden
+        document.getElementById('lightboxModal').addEventListener('hidden.bs.modal', function() {
+            const indicator = document.getElementById('lightboxIndicator');
+            if (indicator) indicator.remove();
+        });
+    }
+}
+
+// Initialize lightbox when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initLightbox();
+});
