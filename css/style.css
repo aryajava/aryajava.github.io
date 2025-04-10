@@ -106,12 +106,14 @@ a {
 
 .hero-image-container {
     position: relative;
+    object-fit: cover;
     max-width: 500px;
     margin: 0 auto;
 }
 
 .hero-image {
     width: 80%;
+    object-fit: cover;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
@@ -328,7 +330,6 @@ a {
 /* Contact Section */
 .contact-section {
     padding: 3rem 0;
-    background-color: white;
 }
 
 .contact-method {
@@ -456,6 +457,11 @@ a {
 
     .hero-image {
         margin-top: 2rem;
+        max-width: 200px;
+        max-height: 200px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 0;
     }
 
     .footer-social {
