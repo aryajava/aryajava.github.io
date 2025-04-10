@@ -27,7 +27,7 @@ const translations = {
 
         "projects.project1.title": "Point of Sale System",
         "projects.project1.description": "A web-based point of sale system for managing sales and inventory.",
-        "projects.project1.feature1": "User authentication and authorization with RBAC (Role-Based Access Control)",
+        "projects.project1.feature1": "User authentication and authorization with Role-Based Access Control",
         "projects.project1.feature6": "Advanced analytics and reporting dashboard",
         "projects.project1.feature2": "Real-time data updates using Socket.io",
         "projects.project1.feature3": "Responsive design with Bootstrap and custom CSS",
@@ -42,8 +42,18 @@ const translations = {
         "projects.project1.techStackBe4": "PostgreSQL",
         "projects.project1.techStackBe3": "Socket.io",
 
-        "projects.project2.title": "Project Name 2",
-        "projects.project2.description": "Brief description about the project and technologies used.",
+        "projects.project2.title": "Task List",
+        "projects.project2.description": "A simple Task List application for managing tasks.",
+        "projects.project2.feature1": "User Management with BREADS (Browse, Read, Edit, Add, Delete, Search)",
+        "projects.project2.feature2": "Task Management with BREADS (Browse, Read, Edit, Add, Delete, Search)",
+        "projects.project2.feature3": "Single Page Application (SPA)",
+        "projects.project2.techStackFe1": "Bootstrap",
+        "projects.project2.techStackFe2": "EJS (Embedded JavaScript)",
+        "projects.project2.techStackFe3": "JQuery",
+        "projects.project2.techStackFe4": "FontAwesome",
+        "projects.project2.techStackBe1": "Node.js",
+        "projects.project2.techStackBe2": "Express.js",
+        "projects.project2.techStackBe3": "MongoDB",
 
         "projects.viewAll": "View All Projects on GitHub",
         
@@ -112,7 +122,7 @@ const translations = {
         
         "projects.project1.title": "Point of Sale System",
         "projects.project1.description": "Sistem point of sale berbasis web untuk mengelola penjualan dan inventaris.",
-        "projects.project1.feature1": "Autentikasi dan otorisasi pengguna dengan RBAC (Kontrol Akses Berdasarkan Peran)",
+        "projects.project1.feature1": "Autentikasi dan otorisasi pengguna dengan Role-Based Access Control",
         "projects.project1.feature6": "Dasbor analitik dan pelaporan yang canggih",
         "projects.project1.feature2": "Pembaruan data real-time menggunakan Socket.io",
         "projects.project1.feature3": "Desain responsif dengan Bootstrap dan CSS kustom",
@@ -127,8 +137,9 @@ const translations = {
         "projects.project1.techStackBe4": "PostgreSQL",
         "projects.project1.techStackBe3": "Socket.io",
 
-        "projects.project2.title": "Nama Proyek 2",
-        "projects.project2.description": "Deskripsi singkat tentang proyek dan teknologi yang digunakan.",
+        "projects.project2.title": "Task List",
+        "projects.project2.description": "Aplikasi Task List sederhana untuk mengelola tugas.",
+
         "projects.viewAll": "Lihat Semua Proyek di GitHub",
         
         // Skills
@@ -211,8 +222,7 @@ document.getElementById('languageSwitchMobile').addEventListener('change', funct
 
 // Inisialisasi bahasa saat halaman dimuat
 document.addEventListener('DOMContentLoaded', function() {
-    // const savedLang = localStorage.getItem('language') || 'en';
-    const savedLang = 'en';
+    const savedLang = localStorage.getItem('language') || 'en';
     document.documentElement.lang = savedLang;
     switchLanguage(savedLang);
     
