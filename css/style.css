@@ -718,6 +718,26 @@ a {
     position: static;
 }
 
+.carousel-indicators {
+    position: absolute;
+    right: 0;
+    bottom: unset;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    padding: unset;
+    margin-right: 15%;
+    margin-bottom: 1rem;
+    margin-left: 15%;
+}
+
+.carousel-indicators [data-bs-target] {
+    padding: 0.1rem;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    margin: 10px 3px;
+}
+
 .project-carousel {
     height: 100%;
 }
@@ -931,5 +951,136 @@ a {
     #lightboxModal .carousel-control-next {
         width: 36px;
         height: 36px;
+    }
+}
+
+/* Enhanced Lightbox Styles */
+#lightboxModal .modal-content {
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+#lightboxModal .btn-close {
+    z-index: 1051;
+    filter: invert(1) drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
+    opacity: 0.9;
+    width: 30px;
+    height: 30px;
+    background-size: 1.25rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+#lightboxModal .btn-close:hover {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+#lightboxModal .carousel-control-prev,
+#lightboxModal .carousel-control-next {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+    margin: 0;
+    opacity: 0.9;
+    transition: all 0.2s ease;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+#lightboxModal .carousel-control-prev {
+    left: 25px;
+    right: auto;
+}
+
+#lightboxModal .carousel-control-next {
+    right: 25px;
+    left: auto;
+}
+
+
+#lightboxModal .carousel-control-prev:hover,
+#lightboxModal .carousel-control-next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+#lightboxModal .carousel-control-prev-icon,
+#lightboxModal .carousel-control-next-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
+}
+
+/* Clickable modal background */
+#lightboxModal .modal-dialog {
+    pointer-events: none;
+    /* Allows clicks to pass through to backdrop */
+}
+
+#lightboxModal .modal-content {
+    pointer-events: auto;
+    /* Re-enable pointer events for content */
+}
+
+#lightboxModal .modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Indicator style */
+.lightbox-indicator {
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: white;
+    font-size: 0.9rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 20px;
+    width: fit-content;
+    margin: 0 auto;
+    backdrop-filter: blur(2px);
+    z-index: 1051;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+
+    #lightboxModal .carousel-control-prev,
+    #lightboxModal .carousel-control-next {
+        width: 40px;
+        height: 40px;
+    }
+
+    #lightboxModal .btn-close {
+        width: 25px;
+        height: 25px;
+        background-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    #lightboxModal .carousel-control-prev {
+        left: 10px;
+    }
+
+    #lightboxModal .carousel-control-next {
+        right: 10px;
+    }
+
+    .lightbox-indicator {
+        font-size: 0.8rem;
+        padding: 3px 8px;
     }
 }

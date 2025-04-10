@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const carousels = document.querySelectorAll('.project-carousel .carousel');
     carousels.forEach(carousel => {
         new bootstrap.Carousel(carousel, {
-            interval: 5000, // 5 detik
+            interval: 10000, // 10 detik
             ride: 'carousel',
             wrap: true,
             pause: 'hover'
@@ -139,9 +139,11 @@ function initLightbox() {
     });
     
     // Function to open lightbox
-    // Update the openLightbox function
     function openLightbox(carouselId, startIndex) {
-        const lightboxModal = new bootstrap.Modal(document.getElementById('lightboxModal'));
+        const lightboxModal = new bootstrap.Modal(document.getElementById('lightboxModal'), {
+            backdrop: true,
+            keyboard: true
+        });
         const lightboxCarouselInner = document.getElementById('lightboxCarouselInner');
         const sourceCarousel = document.getElementById(carouselId);
         const images = sourceCarousel.querySelectorAll('.carousel-item img');
@@ -183,9 +185,23 @@ function initLightbox() {
             );
             document.getElementById('lightboxIndicator').textContent = `${activeIndex + 1} / ${images.length}`;
         });
+
+        // Close when clicking outside image
+        document.getElementById('lightboxModal').addEventListener('click', function(e) {
+            if (e.target === this || e.target.classList.contains('modal-content')) {
+                lightboxModal.hide();
+            }
+        });
+        
+        // Prevent modal close when clicking on image or controls
+        document.getElementById('lightboxCarousel').addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
         
         // Show lightbox
         lightboxModal.show();
+        lightboxCarousel.to(startIndex);
+        document.getElementById('lightboxIndicator').textContent = `${startIndex + 1} / ${images.length}`;
         
         // Go to clicked image and set initial indicator
         lightboxCarousel.to(startIndex);

@@ -118,9 +118,22 @@
                             <div class="project-image-container">
                                 <div class="project-carousel">
                                     <div id="carouselProject1" class="carousel slide" data-bs-ride="carousel">
+                                        <div class="carousel-indicators-container">
+                                            <div class="carousel-indicators">
+                                                <button type="button" data-bs-target="#carouselProject1" data-bs-slide-to="0" class="active"></button>
+                                                <button type="button" data-bs-target="#carouselProject1" data-bs-slide-to="1"></button>
+                                                <button type="button" data-bs-target="#carouselProject1" data-bs-slide-to="2"></button>
+                                            </div>
+                                        </div>
                                         <div class="carousel-inner">
                                             <div class="carousel-item active">
                                                 <img src="img/pos/1.png" class="d-block w-100" alt="POS Screenshot 1">
+                                            </div>
+                                            <div class="carousel-item active">
+                                                <img src="img/pos/2.png" class="d-block w-100" alt="POS Screenshot 2">
+                                            </div>
+                                            <div class="carousel-item active">
+                                                <img src="img/pos/3.png" class="d-block w-100" alt="POS Screenshot 3">
                                             </div>
                                         </div>
                                         <!-- Remove the default carousel controls since we'll use lightbox -->
@@ -165,8 +178,8 @@
     <!-- Skills Section -->
     <section id="skills" class="skills-section bg-light">
         <div class="container">
-            <h2 class="section-title">My Skills</h2>
-            <p class="section-subtitle">Technologies I work with</p>
+            <h2 class="section-title" data-i18n="skills.title">My Skills</h2>
+            <p class="section-subtitle" data-i18n="skills.subtitle">Technologies I work with</p>
             
             <div class="row">
                 <div class="col-md-6 mb-3">
@@ -296,6 +309,8 @@
                         <span class="skill-badge" data-i18n="skills.other1">Other Skill</span>
                         <span class="skill-badge" data-i18n="skills.other2">Other Skill</span>
                         <span class="skill-badge" data-i18n="skills.other3">Other Skill</span>
+                        <span class="skill-badge" data-i18n="skills.other4">Other Skill</span>
+                        <span class="skill-badge" data-i18n="skills.other5">Other Skill</span>
                     </div>
                 </div>
             </div>
