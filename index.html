@@ -1,176 +1,467 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="title">Portofolio Saya</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <header class="bg-dark text-white py-3">
-        <div class="container">
-            <div class="d-flex justify-content-between align-items-center">
-                <!-- Logo/Nama -->
-                <div class="d-flex align-items-center">
-                    <img src="img/profile.jpg" alt="Foto Profil" class="rounded-circle me-3" width="50">
-                    <h5 class="mb-0" data-i18n="name">Nama Lengkap Anda</h5>
-                </div>
-
-                <!-- Navigasi -->
-                <nav class="d-none d-md-flex align-items-center">
-                    <ul class="nav-list mb-0">
-                        <li><a href="#about" data-i18n="nav.about">Tentang Saya</a></li>
-                        <li><a href="#education" data-i18n="nav.education">Pendidikan</a></li>
-                        <li><a href="#experience" data-i18n="nav.experience">Pengalaman</a></li>
-                        <li><a href="#projects" data-i18n="nav.projects">Proyek</a></li>
+<body id="home">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <span class="brand-name" data-i18n="brand">Portofolio</span>
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto me-5">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home" data-i18n="nav.home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#projects" data-i18n="nav.projects">Proyek</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#skills" data-i18n="nav.skills">Keahlian</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact" data-i18n="nav.contact">Kontak</a>
+                        </li>
+                        
+                        <!-- Tombol Download Mobile -->
+                        <li class="nav-item d-md-none">
+                            <a class="nav-link" href="https://drive.google.com/uc?export=download&id=1IyJfDqmWUHiwtf6iN0SJc6K4vay9DfCF" >
+                                <i class="fas fa-download me-2"></i>
+                                <span data-i18n="contact.downloadResume">Unduh Resume</span>
+                            </a>
+                        </li>
+                        
+                        <!-- Toggle Language Mobile -->
+                        <li class="nav-item d-md-none">
+                            <div class="language-toggle-mobile nav-link">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="languageSwitchMobile">
+                                    <label class="form-check-label text-white" for="languageSwitchMobile">
+                                        <span data-i18n="language.id">ID</span> | 
+                                        <span data-i18n="language.en">EN</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </li>
                     </ul>
-
-                    <!-- Toggle Bahasa -->
-                    <div class="language-switch-container ms-4">
-                        <span data-i18n="language.id">ID</span>
-                        <label class="language-switch">
-                            <input type="checkbox" id="languageToggle">
-                            <span class="language-slider round"></span>
-                        </label>
-                        <span data-i18n="language.en">EN</span>
-                    </div>
-                </nav>
-
-                <!-- Menu Mobile -->
-                <div class="d-md-none">
-                    <button class="btn btn-outline-light" id="mobileMenuButton">
-                        <i class="fas fa-bars"></i>
-                    </button>
                 </div>
-            </div>
 
-            <!-- Menu Mobile (Dropdown) -->
-            <div class="mobile-menu d-md-none mt-3" id="mobileMenu">
-                <ul class="list-unstyled">
-                    <li class="mb-2"><a href="#about" data-i18n="nav.about">Tentang Saya</a></li>
-                    <li class="mb-2"><a href="#education" data-i18n="nav.education">Pendidikan</a></li>
-                    <li class="mb-2"><a href="#experience" data-i18n="nav.experience">Pengalaman</a></li>
-                    <li class="mb-2"><a href="#projects" data-i18n="nav.projects">Proyek</a></li>
-                    <li>
-                        <div class="d-flex align-items-center justify-content-center mt-2">
-                            <span data-i18n="language.id" class="me-2">ID</span>
-                            <label class="language-switch">
-                                <input type="checkbox" id="languageToggleMobile">
-                                <span class="language-slider round"></span>
-                            </label>
-                            <span data-i18n="language.en" class="ms-2">EN</span>
-                        </div>
-                    </li>
-                </ul>
+                <!-- Download Resume in Header -->
+                <a href="https://drive.google.com/uc?export=download&id=1IyJfDqmWUHiwtf6iN0SJc6K4vay9DfCF"
+                   class="btn btn-outline-light me-3 d-none d-md-inline-block download-btn-header">
+                    <i class="fas fa-download me-2"></i>
+                    <span data-i18n="contact.downloadResume">Unduh Resume</span>
+                </a>
+
+                <!-- Toggle Language Desktop -->
+                <div class="language-toggle me-3 d-none d-md-block">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="languageSwitch">
+                        <label class="form-check-label text-white" for="languageSwitch">
+                            <span class="language-label" data-i18n="language.id">ID</span> | 
+                            <span class="language-label" data-i18n="language.en">EN</span>
+                        </label>
+                    </div>
+                </div>
+                
+            </div>
+        </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h2 class="hero-title">
+                        <span data-i18n="hero.title"> Hai, saya </span>
+                        <span class="highlight" data-i18n="hero.name">Nama Anda</span>
+                    </h2>
+                    <!-- <h2 class="hero-subtitle" data-i18n="hero.subtitle">Profesi/Jabatan</h2> -->
+                    <p class="hero-text" data-i18n="hero.description">Deskripsi singkat tentang apa yang Anda lakukan dan keahlian khusus Anda.</p>
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn btn-primary btn-lg me-3" data-i18n="hero.cta.projects">Lihat Proyek</a>
+                        <a href="#contact" class="btn btn-outline-light btn-lg" data-i18n="hero.cta.contact">Hubungi Saya</a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="hero-image-container">
+                        <img src="img/pp_muhammad-arya-java.jpg" alt="Profile Picture Muhammad Arya Java" class="hero-image">
+                    </div>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero bg-dark text-white text-center py-5">
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
         <div class="container">
-            <img src="img/profile.jpg" alt="Foto Profil" class="rounded-circle mb-3" width="150">
-            <h1 data-i18n="name">Nama Lengkap Anda</h1>
-            <p class="lead" data-i18n="profession">Profesi/Jabatan Anda</p>
-        </div>
-    </section>
-
-
-    <section id="about" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5" data-i18n="about.title">Tentang Saya</h2>
+            <h2 class="section-title" data-i18n="projects.title">Proyek Unggulan</h2>
+            <p class="section-subtitle" data-i18n="projects.subtitle">Beberapa karya terbaik saya</p>
+            
             <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <p class="text-center" data-i18n="about.description">
-                        Deskripsi singkat tentang diri Anda, minat, keahlian, dan tujuan karir.
-                        Tambahkan beberapa kalimat yang menggambarkan siapa Anda dan apa yang Anda lakukan.
-                    </p>
+                <!-- Project 1 -->
+                <div class="col-lg-6 mb-4">
+                    <div class="project-card">
+                        <div class="project-image-container">
+                            <img src="img/project1.jpg" alt="Project 1" class="project-image">
+                            <div class="project-links">
+                                <a href="#" class="project-link" data-bs-toggle="modal" data-bs-target="#project1Modal">
+                                    <i class="fas fa-play"></i> <span data-i18n="projects.demo">Demo</span>
+                                </a>
+                                <a href="https://github.com/aryajava/project1" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i> <span data-i18n="projects.code">Kode</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title" data-i18n="projects.project1.title">Nama Proyek 1</h3>
+                            <p class="project-description" data-i18n="projects.project1.description">Deskripsi singkat tentang proyek dan teknologi yang digunakan.</p>
+                            <div class="project-tech">
+                                <span class="tech-badge">React</span>
+                                <span class="tech-badge">Node.js</span>
+                                <span class="tech-badge">MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="education" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-5" data-i18n="education.title">Riwayat Pendidikan</h2>
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <ul class="timeline">
-                        <li class="timeline-item">
-                            <h4 data-i18n="education.university.name">Nama Universitas/Institusi</h4>
-                            <p class="text-muted" data-i18n="education.university.detail">Jurusan - Gelar (Tahun Lulus)</p>
-                            <!-- <p data-i18n="education.university.description">Deskripsi singkat tentang pendidikan Anda, pencapaian, atau konsentrasi studi.</p> -->
-                        </li>
-                        <li class="timeline-item">
-                            <h4 data-i18n="education.highschool.name">Nama Sekolah Menengah</h4>
-                            <p class="text-muted" data-i18n="education.highschool.detail">Jurusan (Jika ada) - Tahun Lulus</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="experience" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5" data-i18n="experience.title">Pengalaman Kerja</h2>
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <h5 class="card-title" data-i18n="experience.job1.position">Nama Posisi</h5>
-                            <h6 class="card-subtitle mb-2 text-muted" data-i18n="experience.job1.company">Nama Perusahaan</h6>
-                            <p class="card-text text-muted" data-i18n="experience.job1.period">Periode Kerja (Bulan/Tahun - Bulan/Tahun)</p>
-                            <p class="card-text" data-i18n="experience.job1.description">Deskripsi tanggung jawab dan pencapaian dalam peran ini.</p>
-                            <ul>
-                                <li data-i18n="experience.job1.responsibility1">Pencapaian atau tanggung jawab utama 1</li>
-                                <li data-i18n="experience.job1.responsibility2">Pencapaian atau tanggung jawab utama 2</li>
-                            </ul>
+                
+                <!-- Project 2 -->
+                <div class="col-lg-6 mb-4">
+                    <div class="project-card">
+                        <div class="project-image-container">
+                            <img src="img/project2.jpg" alt="Project 2" class="project-image">
+                            <div class="project-links">
+                                <a href="#" class="project-link" data-bs-toggle="modal" data-bs-target="#project2Modal">
+                                    <i class="fas fa-play"></i> <span data-i18n="projects.demo">Demo</span>
+                                </a>
+                                <a href="https://github.com/aryajava/project2" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i> <span data-i18n="projects.code">Kode</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title" data-i18n="projects.project2.title">Nama Proyek 2</h3>
+                            <p class="project-description" data-i18n="projects.project2.description">Deskripsi singkat tentang proyek dan teknologi yang digunakan.</p>
+                            <div class="project-tech">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">Django</span>
+                                <span class="tech-badge">PostgreSQL</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            
+            <div class="text-center mt-4">
+                <a href="https://github.com/aryajava" target="_blank" class="btn btn-outline-primary">
+                    <span data-i18n="projects.viewAll">Lihat Semua Proyek di GitHub</span> <i class="fas fa-arrow-right ms-2"></i>
+                </a>
+            </div>
         </div>
     </section>
 
-    <section id="projects" class="py-5 bg-light">
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section bg-light">
         <div class="container">
-            <h2 class="text-center mb-5" data-i18n="projects.title">Proyek Saya</h2>
+            <h2 class="section-title">My Skills</h2>
+            <p class="section-subtitle">Technologies I work with</p>
+            
             <div class="row">
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100">
-                        <!-- <img src="img/project1.jpg" class="card-img-top" alt="Nama Project 1"> -->
-                        <div class="card-body">
-                            <h5 class="card-title" data-i18n="projects.project1.name">Nama Project 1</h5>
-                            <p class="card-text" data-i18n="projects.project1.description">Deskripsi singkat tentang project ini, teknologi yang digunakan, dan tujuan project.</p>
-                            
-                            <!-- <div class="mb-3">
-                                <h6 data-i18n="projects.demo">Demo Video:</h6>
-                                <video width="100%" controls>
-                                    <source src="videos/project1-demo.mp4" type="video/mp4">
-                                    Browser Anda tidak mendukung tag video.
-                                </video>
-                            </div> -->
-                            
-                            <a href="https://github.com/username/repo-project1" class="btn btn-primary" target="_blank" data-i18n="projects.viewRepo">Lihat Repository</a>
+                <div class="col-md-6">
+                    <div class="skill-category">
+                        <h3 class="skill-category-title">Frontend Development</h3>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name" data-i18n="skills.fe1">FE Skill</span>
+                                <span class="skill-level" data-i18n="skills.level.expert">Level</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name" data-i18n="skills.fe2">FE Skill</span>
+                                <span class="skill-level" data-i18n="skills.level.advanced">Level</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name" data-i18n="skills.fe3">FE Skill</span>
+                                <span class="skill-level" data-i18n="skills.level.advanced">Level</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name" data-i18n="skills.fe4">FE Skill</span>
+                                <span class="skill-level" data-i18n="skills.level.intermediate">Level</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name" data-i18n="skills.fe5">FE Skill</span>
+                                <span class="skill-level" data-i18n="skills.level.advanced">Level</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name" data-i18n="skills.fe6">FE Skill</span>
+                                <span class="skill-level" data-i18n="skills.level.advanced">Level</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 85%"></div>
+                            </div>
                         </div>
                     </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="skill-category">
+                        <h3 class="skill-category-title">Backend Development</h3>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name" data-i18n="skills.be1">BE Skill</span>
+                                <span class="skill-level" data-i18n="skills.level.advanced">Level</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name" data-i18n="skills.be2">BE Skill</span>
+                                <span class="skill-level" data-i18n="skills.level.advanced">Level</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name" data-i18n="skills.be3">BE Skill</span>
+                                <span class="skill-level" data-i18n="skills.level.intermediate">Level</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name" data-i18n="skills.be4">BE Skill</span>
+                                <span class="skill-level" data-i18n="skills.level.intermediate">Level</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name" data-i18n="skills.be5">BE Skill</span>
+                                <span class="skill-level" data-i18n="skills.level.intermediate">Level</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name" data-i18n="skills.be6">BE Skill</span>
+                                <span class="skill-level" data-i18n="skills.level.intermediate">Level</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="other-skills mt-5">
+                <h3 class="skill-category-title align-items-center">Other Skills</h3>
+                <div class="d-flex flex-wrap">
+                    <span class="skill-badge" data-i18n="skills.other1">Other Skill</span>
+                    <span class="skill-badge" data-i18n="skills.other2">Other Skill</span>
+                    <span class="skill-badge" data-i18n="skills.other3">Other Skill</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-dark text-white text-center py-4">
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="contact.title">Hubungi Saya</h2>
+                <p class="section-subtitle" data-i18n="contact.subtitle">Saya terbuka untuk pekerjaan freelance dan kolaborasi</p>
+                
+                <!-- Contact -->
+                <div class="contact-horizontal">
+                    <div class="row justify-content-center">
+                        <!-- Email -->
+                        <div class="col-md-3 col-sm-6 mb-4">
+                            <div class="contact-card">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4 data-i18n="contact.email">Email</h4>
+                                    <a href="mailto:muhammad.aryajava@gmail.com">muhammad.aryajava@gmail.com</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Telepon -->
+                        <div class="col-md-3 col-sm-6 mb-4">
+                            <div class="contact-card">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4 data-i18n="contact.phone">WhatsApp</h4>
+                                    <a href="https://wa.me/6281216920509" target="_blank">+62 812 1692 0509</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- LinkedIn -->
+                        <div class="col-md-3 col-sm-6 mb-4">
+                            <div class="contact-card">
+                                <div class="contact-icon">
+                                    <i class="fab fa-linkedin"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>LinkedIn</h4>
+                                    <a href="https://linkedin.com/in/aryajv" target="_blank">linkedin.com/in/aryajv</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- GitHub -->
+                        <div class="col-md-3 col-sm-6 mb-4">
+                            <div class="contact-card">
+                                <div class="contact-icon">
+                                    <i class="fab fa-github"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>GitHub</h4>
+                                    <a href="https://github.com/aryajava" target="_blank">github.com/aryajava</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Download Resume -->
+                    <div class="resume-download text-center mt-3">
+                        <a href="https://drive.google.com/uc?export=download&id=1IyJfDqmWUHiwtf6iN0SJc6K4vay9DfCF"
+                           class="btn btn-primary btn-lg download-btn">
+                            <i class="fas fa-download me-2"></i>
+                            <span data-i18n="contact.downloadResume">Download Resume</span>
+                        </a>
+                        <p class="mt-3 text-muted" data-i18n="contact.resumeNote">Unduh CV saya dalam format PDF</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+     <!-- Project Modals -->
+     <div class="modal fade" id="project1Modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><span data-i18n="projects.project1.title">Project 1</span> Demo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="ratio ratio-16x9">
+                        <video controls>
+                            <source src="videos/project1-demo.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="https://github.com/aryajava/project1" target="_blank" class="btn btn-outline-dark">
+                        <i class="fab fa-github"></i> View Code
+                    </a>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="project2Modal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><span data-i18n="projects.project2.title">Project 2</span> Demo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="ratio ratio-16x9">
+                        <video controls>
+                            <source src="videos/project2-demo.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="https://github.com/aryajava/project2" target="_blank" class="btn btn-outline-dark">
+                        <i class="fab fa-github"></i> View Code
+                    </a>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white py-4">
         <div class="container">
-            <p>&copy; <span id="year"></span> <span data-i18n="footer.copyright">Nama Anda. All rights reserved.</span></p>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="footer-brand" data-i18n="footer.brand">Portofolio</h3>
+                    <p class="footer-text" data-i18n="footer.text">Portofolio karya dan keahlian saya.</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="footer-social">
+                        <a href="https://github.com/aryajava" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/aryajv/" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <!-- Tambahkan media sosial lainnya -->
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom text-center mt-3">
+                <p class="mb-0">&copy; <span id="currentYear"></span> <span data-i18n="footer.copyright">Portofolio. All rights reserved.</span></p>
+            </div>
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
-    <script src="js/language.js"></script>
-    <script src="js/navigation.js"></script>
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/language.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

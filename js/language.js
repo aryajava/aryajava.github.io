@@ -1,118 +1,184 @@
 // Daftar terjemahan
 const translations = {
     en: {
-        "title": "Muhammad Arya Java Portfolio",
-        "name": "Muhammad Arya Java",
-        "profession": "Your Profession/Title",
+        // Navigasi
+        "title": "Muhammad Arya Java",
+        "brand": "Muhammad Arya Java",
+        "nav.home": "Home",
+        "nav.projects": "Projects",
+        "nav.skills": "Skills",
+        "nav.contact": "Contact",
         "language.id": "ID",
         "language.en": "EN",
-        "nav.about": "About Me",
-        "nav.education": "Education",
-        "nav.experience": "Experience",
-        "nav.projects": "Projects",
-        "about.title": "About Me",
-        "about.description": "Computer Science graduate skilled in Full-Stack Development (React, Node.js, MongoDB) and building scalable web applications. Strong problem-solving abilities with experience in competitive programming and Python-based machine learning. Passionate about efficient and user-centric solutions.",
-        "education.title": "Education",
-        "education.university.name": "Budi Luhur University",
-        "education.university.detail": "Computer Science - Bachelor of Computer Science (2023)",
-        "education.university.description": "Brief description about your education, achievements, or study concentration.",
-        "education.highschool.name": "Semen Gresik Vocational High School",
-        "education.highschool.detail": "Software Engineering - 2018",
-        "experience.title": "Work Experience",
-        "experience.job1.position": "Position Name",
-        "experience.job1.company": "Company Name",
-        "experience.job1.period": "Work Period (Month/Year - Month/Year)",
-        "experience.job1.description": "Description of responsibilities and achievements in this role.",
-        "experience.job1.responsibility1": "Main achievement or responsibility 1",
-        "experience.job1.responsibility2": "Main achievement or responsibility 2",
-        "projects.title": "My Projects",
-        "projects.project1.name": "Project Name 1",
-        "projects.project1.description": "Brief description about this project, technologies used, and project purpose.",
-        "projects.demo": "Demo Video:",
-        "projects.viewRepo": "View Repository",
+        
+        // Hero Section
+        "hero.title": "Hi, I'm ",
+        "hero.name": "Muhammad Arya Java",
+        "hero.subtitle": "Job Title/Profession",
+        "hero.description": "Full Stack Developer with experience in building scalable web applications using React.js, Node.js, and modern databases. Strong background in software engineering and a passion for learning new technologies.",
+        "hero.cta.projects": "View Projects",
+        "hero.cta.contact": "Contact Me",
+        
+        // Projects
+        "projects.title": "Featured Projects",
+        "projects.subtitle": "Some of my best works",
+        "projects.demo": "Demo",
+        "projects.code": "Code",
+        "projects.project1.title": "Project Name 1",
+        "projects.project1.description": "Brief description about the project and technologies used.",
+        "projects.project2.title": "Project Name 2",
+        "projects.project2.description": "Brief description about the project and technologies used.",
+        "projects.viewAll": "View All Projects on GitHub",
+        
+        // Skills
+        "skills.title": "My Skills",
+        "skills.subtitle": "Technologies I work with",
+        "skills.frontend": "Frontend Development",
+        "skills.backend": "Backend Development",
+        "skills.fe1": "HTML",
+        "skills.fe2": "CSS",
+        "skills.fe3": "JavaScript",
+        "skills.fe4": "React.js",
+        "skills.fe5": "Bootstrap",
+        "skills.fe6": "jQuery",
+        "skills.be1": "Node.js",
+        "skills.be2": "Express.js",
+        "skills.be3": "PostgreSQL",
+        "skills.be4": "MySQL",
+        "skills.be5": "MongoDB",
+        "skills.be6": "SQLite",
+        "skills.other1": "Git",
+        "skills.other2": "Socket.io",
+        "skills.other3": "Docker",
+        "skills.level.expert": "Expert",
+        "skills.level.advanced": "Advanced",
+        "skills.level.intermediate": "Intermediate",
+        "skills.level.basic": "Basic",
+        
+        // Contact
+        "contact.title": "Contact Me",
+        "contact.subtitle": "I'm available for freelance work and collaborations",
+        "contact.downloadResume": "Download Resume",
+        "contact.resumeNote": "Download my Resume in PDF format",
+        
+        // Footer
+        "footer.brand": "Muhammad Arya Java",
+        "footer.text": "A showcase of my works and skills.",
         "footer.copyright": "Muhammad Arya Java. All rights reserved."
     },
     id: {
-        "title": "Portofolio Muhammad Arya Java",
-        "name": "Muhammad Arya Java",
-        "profession": "Profesi/Jabatan Anda",
+        // Navigasi
+        "title": "Muhammad Arya Java",
+        "brand": "Muhammad Arya Java",
+        "nav.home": "Beranda",
+        "nav.projects": "Proyek",
+        "nav.skills": "Keahlian",
+        "nav.contact": "Kontak",
         "language.id": "ID",
         "language.en": "EN",
-        "nav.about": "Tentang Saya",
-        "nav.education": "Pendidikan",
-        "nav.experience": "Pengalaman",
-        "nav.projects": "Proyek",
-        "about.title": "Tentang Saya",
-        "about.description": "Lulusan Teknik Informatika dengan keahlian dalam Full-Stack Development (React, Node.js, MongoDB) dan pembuatan aplikasi web yang skalabel. Memiliki kemampuan pemecahan masalah yang kuat, berpengalaman dalam competitive programming dan pengembangan machine learning berbasis Python. Berkomitmen untuk menghadirkan solusi yang efisien dan berfokus pada pengguna.",
-        "education.title": "Riwayat Pendidikan",
-        "education.university.name": "Universitas Budi Luhur | Jakarta - Indonesia",
-        "education.university.detail": "Teknik Informatika - Sarjana Komputer (S.kom) | 2023",
-        "education.university.description": "Deskripsi singkat tentang pendidikan Anda, pencapaian, atau konsentrasi studi.",
-        "education.highschool.name": "SMK Semen Gresik | Gresik - Indonesia",
-        "education.highschool.detail": "Rekayasa Perangkat Lunak (RPL) | 2018",
-        "experience.title": "Pengalaman Kerja",
-        "experience.job1.position": "Nama Posisi",
-        "experience.job1.company": "Nama Perusahaan",
-        "experience.job1.period": "Periode Kerja (Bulan/Tahun - Bulan/Tahun)",
-        "experience.job1.description": "Deskripsi tanggung jawab dan pencapaian dalam peran ini.",
-        "experience.job1.responsibility1": "Pencapaian atau tanggung jawab utama 1",
-        "experience.job1.responsibility2": "Pencapaian atau tanggung jawab utama 2",
-        "projects.title": "Proyek Saya",
-        "projects.project1.name": "Nama Project 1",
-        "projects.project1.description": "Deskripsi singkat tentang project ini, teknologi yang digunakan, dan tujuan project.",
-        "projects.demo": "Video Demo:",
-        "projects.viewRepo": "Lihat Repository",
-        "footer.copyright": "Muhammad Arya Java. All rights reserved."
+        
+        // Hero Section
+        "hero.title": "Hai, saya",
+        "hero.name": "Muhammad Arya Java",
+        "hero.subtitle": "Profesi/Jabatan",
+        "hero.description": "Full Stack Developer dengan pengalaman dalam membangun aplikasi web yang dapat diskalakan menggunakan React.js, Node.js, dan basis data modern. Memiliki latar belakang yang kuat dalam rekayasa perangkat lunak dan semangat untuk mempelajari teknologi baru.",
+        "hero.cta.projects": "Lihat Proyek",
+        "hero.cta.contact": "Hubungi Saya",
+        
+        // Projects
+        "projects.title": "Proyek Unggulan",
+        "projects.subtitle": "Beberapa karya terbaik saya",
+        "projects.demo": "Demo",
+        "projects.code": "Kode",
+        "projects.project1.title": "Nama Proyek 1",
+        "projects.project1.description": "Deskripsi singkat tentang proyek dan teknologi yang digunakan.",
+        "projects.project2.title": "Nama Proyek 2",
+        "projects.project2.description": "Deskripsi singkat tentang proyek dan teknologi yang digunakan.",
+        "projects.viewAll": "Lihat Semua Proyek di GitHub",
+        
+        // Skills
+        "skills.title": "Keahlian Saya",
+        "skills.subtitle": "Teknologi yang saya kuasai",
+        "skills.frontend": "Pengembangan Frontend",
+        "skills.backend": "Pengembangan Backend",
+        "skills.fe1": "HTML",
+        "skills.fe2": "CSS",
+        "skills.fe3": "JavaScript",
+        "skills.fe4": "React.js",
+        "skills.fe5": "Bootstrap",
+        "skills.fe6": "jQuery",
+        "skills.be1": "Node.js",
+        "skills.be2": "Express.js",
+        "skills.be3": "PostgreSQL",
+        "skills.be4": "MySQL",
+        "skills.be5": "MongoDB",
+        "skills.be6": "SQLite",
+        "skills.other1": "Git",
+        "skills.other2": "Socket.io",
+        "skills.other3": "Docker",
+        "skills.level.expert": "Ahli",
+        "skills.level.advanced": "Lanjutan",
+        "skills.level.intermediate": "Menengah",
+        "skills.level.basic": "Dasar",
+        
+        // Contact
+        "contact.title": "Hubungi Saya",
+        "contact.subtitle": "Saya terbuka untuk pekerjaan freelance dan kolaborasi",
+        "contact.downloadResume": "Unduh Resume",
+        "contact.resumeNote": "Unduh Resume saya dalam format PDF",
+        
+        // Footer
+        "footer.brand": "Muhammad Arya Java",
+        "footer.text": "Portofolio karya dan keahlian saya.",
+        "footer.copyright": "Muhammad Arya Java. Hak cipta dilindungi undang-undang."
     }
 };
 
-// Fungsi untuk mengganti bahasa dengan animasi
+// Fungsi untuk mengganti bahasa
 function switchLanguage(lang) {
-    // Animasi fade out
-    const elements = document.querySelectorAll('[data-i18n]');
-    elements.forEach(el => el.classList.add('fade-out'));
+    // Simpan preferensi bahasa
+    localStorage.setItem('language', lang);
+    document.documentElement.lang = lang;
     
-    setTimeout(() => {
-        // Simpan preferensi bahasa
-        localStorage.setItem('language', lang);
-        document.querySelector('html').lang = lang;
-        
-        // Update toggle position
-        document.getElementById('languageToggle').checked = lang === 'en';
-        
-        // Terapkan terjemahan
-        elements.forEach(element => {
-            const key = element.getAttribute('data-i18n');
-            if (translations[lang][key]) {
-                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                    element.value = translations[lang][key];
-                } else {
-                    element.textContent = translations[lang][key];
-                }
-            }
-        });
-        
-        // Animasi fade in
-        setTimeout(() => {
-            elements.forEach(el => el.classList.remove('fade-out'));
-            elements.forEach(el => el.classList.add('fade-in'));
-            setTimeout(() => {
-                elements.forEach(el => el.classList.remove('fade-in'));
-            }, 300);
-        }, 50);
-    }, 300);
+    // Update toggle switch
+    document.getElementById('languageSwitch').checked = lang === 'en';
+    document.getElementById('languageSwitchMobile').checked = lang === 'en';
+    
+    // Terapkan terjemahan
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+            element.textContent = translations[lang][key];
+        }
+    });
+    
+    // Terapkan placeholder
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+        const key = element.getAttribute('data-i18n-placeholder');
+        if (translations[lang][key]) {
+            element.setAttribute('placeholder', translations[lang][key]);
+        }
+    });
 }
 
-// Event listener untuk toggle
-document.getElementById('languageToggle').addEventListener('change', function() {
-    const newLang = this.checked ? 'en' : 'id';
-    switchLanguage(newLang);
+// Event listener untuk toggle bahasa
+document.getElementById('languageSwitch').addEventListener('change', function() {
+    const lang = this.checked ? 'en' : 'id';
+    switchLanguage(lang);
+});
+
+document.getElementById('languageSwitchMobile').addEventListener('change', function() {
+    const lang = this.checked ? 'en' : 'id';
+    switchLanguage(lang);
 });
 
 // Inisialisasi bahasa saat halaman dimuat
 document.addEventListener('DOMContentLoaded', function() {
-    const savedLang = localStorage.getItem('language') || 'id';
-    document.querySelector('html').lang = savedLang;
-    document.getElementById('languageToggle').checked = savedLang === 'en';
+    // const savedLang = localStorage.getItem('language') || 'en';
+    const savedLang = 'en';
+    document.documentElement.lang = savedLang;
     switchLanguage(savedLang);
+    
+    // Set tahun di footer
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
 });
