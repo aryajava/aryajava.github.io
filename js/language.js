@@ -42,8 +42,8 @@ const translations = {
         "projects.project1.techStackBe4": "PostgreSQL",
         "projects.project1.techStackBe3": "Socket.io",
 
-        "projects.project2.title": "Task List",
-        "projects.project2.description": "A simple Task List application for managing tasks.",
+        "projects.project2.title": "Todo List",
+        "projects.project2.description": "A simple Todo List application for managing tasks.",
         "projects.project2.feature1": "User Management with BREADS (Browse, Read, Edit, Add, Delete, Search)",
         "projects.project2.feature2": "Task Management with BREADS (Browse, Read, Edit, Add, Delete, Search)",
         "projects.project2.feature3": "Single Page Application (SPA)",
@@ -137,8 +137,8 @@ const translations = {
         "projects.project1.techStackBe4": "PostgreSQL",
         "projects.project1.techStackBe3": "Socket.io",
 
-        "projects.project2.title": "Task List",
-        "projects.project2.description": "Aplikasi Task List sederhana untuk mengelola tugas.",
+        "projects.project2.title": "Todo List",
+        "projects.project2.description": "Aplikasi Todo List sederhana untuk mengelola tugas.",
 
         "projects.viewAll": "Lihat Semua Proyek di GitHub",
         
