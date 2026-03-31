@@ -234,23 +234,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Animate progress bars when skills section is visible
-    const skillsObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.querySelectorAll('.progress-bar').forEach(bar => {
-                    const width = bar.style.width;
-                    bar.style.width = '0';
-                    setTimeout(() => { bar.style.width = width; }, 100);
-                });
-                skillsObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.2 });
-    
-    const skillsSection = document.getElementById('skills');
-    if (skillsSection) skillsObserver.observe(skillsSection);
-
     // Experience Timeline Switching
     document.querySelectorAll('.exp-timeline-item').forEach(btn => {
         btn.addEventListener('click', function() {
