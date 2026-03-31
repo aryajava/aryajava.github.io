@@ -15,7 +15,7 @@ const translations = {
         // Hero Section
         "hero.title": "Hi, I'm ",
         "hero.name": "Muhammad Arya Java",
-        "hero.subtitle": "Backend Engineer | Microservices Specialist | Saga Pattern | SonarQube",
+        "hero.subtitle": "Backend Engineer",
         "hero.description": "Bachelor of Informatics Engineering graduate from Universitas Budi Luhur with a strong focus on Back-End Development and Distributed Systems. Experienced in building scalable microservices with hands-on experience implementing the Saga Pattern for complex transactions and ensuring code excellence through SonarQube static analysis. Currently working as Back End Developer at PT. Besmart Global Indonesia.",
         "hero.cta.projects": "View Projects",
         "hero.cta.contact": "Contact Me",
@@ -146,7 +146,7 @@ const translations = {
         // Hero Section
         "hero.title": "Hai, saya",
         "hero.name": "Muhammad Arya Java",
-        "hero.subtitle": "Backend Engineer | Microservices Specialist | Saga Pattern | SonarQube",
+        "hero.subtitle": "Backend Engineer",
         "hero.description": "Lulusan S1 Teknik Informatika dari Universitas Budi Luhur dengan fokus kuat pada Back-End Development dan Distributed Systems. Berpengalaman dalam membangun microservices yang scalable dengan pengalaman langsung mengimplementasikan Saga Pattern untuk transaksi kompleks serta memastikan kualitas kode melalui analisis statis SonarQube. Saat ini bekerja sebagai Back End Developer di PT. Besmart Global Indonesia.",
         "hero.cta.projects": "Lihat Proyek",
         "hero.cta.contact": "Hubungi Saya",
@@ -288,6 +288,15 @@ function switchLanguage(lang) {
         if (translations[lang][key]) {
             element.setAttribute('placeholder', translations[lang][key]);
         }
+    });
+
+    // Update resume download links based on language
+    const resumeLinks = {
+        id: 'https://drive.google.com/uc?export=download&id=1IyJfDqmWUHiwtf6iN0SJc6K4vay9DfCF',
+        en: 'https://drive.google.com/uc?export=download&id=1IyJfDqmWUHiwtf6iN0SJc6K4vay9DfCF'
+    };
+    document.querySelectorAll('.resume-link').forEach(link => {
+        link.href = resumeLinks[lang];
     });
 }
 
