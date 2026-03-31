@@ -117,116 +117,165 @@
             <p class="section-subtitle" data-i18n="experience.subtitle">Perjalanan karir profesional saya</p>
             
             <div class="row">
-                <!-- Company 1: PT. Besmart Global Indonesia (2 roles) -->
-                <div class="col-lg-7 col-md-12 mb-4 fade-up">
+                <!-- Company 1: PT. Besmart Global Indonesia -->
+                <div class="col-lg-6 col-md-12 mb-4 fade-up">
                     <div class="exp-card">
                         <div class="exp-card-header">
-                            <h4 class="exp-card-company-name">PT. Besmart Global Indonesia</h4>
-                            <span class="exp-card-tenure">9 mos</span>
+                            <div class="exp-company-info">
+                                <h4 class="exp-card-company-name">PT. Besmart Global Indonesia</h4>
+                                <span class="exp-card-tenure">9 mos</span>
+                            </div>
                         </div>
 
-                        <!-- Horizontal Timeline Tabs -->
+                        <!-- Horizontal Timeline -->
                         <div class="exp-timeline">
                             <button class="exp-timeline-item active" data-target="besmart-role1">
                                 <span class="exp-timeline-dot"></span>
-                                <span class="exp-timeline-label" data-i18n="experience.exp1.role1.period">Agu 2025 - Sekarang</span>
+                                <span class="exp-timeline-label" data-i18n="experience.exp1.role1.period">Agu 2025 - Sekarang · 8 bln</span>
                             </button>
                             <div class="exp-timeline-line"></div>
                             <button class="exp-timeline-item" data-target="besmart-role2">
                                 <span class="exp-timeline-dot"></span>
-                                <span class="exp-timeline-label" data-i18n="experience.exp1.role2.period">Jul 2025 - Agu 2025</span>
+                                <span class="exp-timeline-label" data-i18n="experience.exp1.role2.period">Jul 2025 - Agu 2025 · 2 bln</span>
                             </button>
                         </div>
 
-                        <!-- Role 1: SCM (shown by default) -->
+                        <!-- Role 1: SCM -->
                         <div class="exp-role-content active" id="besmart-role1">
-                            <div class="exp-role-top">
-                                <div>
-                                    <h5 class="exp-role-title" data-i18n="experience.exp1.role1.title">Back End Developer</h5>
-                                    <span class="role-type badge bg-primary" data-i18n="experience.exp1.role1.type">Full-time</span>
+                            <div class="exp-role-summary-info">
+                                <div class="exp-role-row">
+                                    <span class="exp-label" data-i18n="experience.labels.position">Posisi:</span>
+                                    <span class="exp-value" data-i18n="experience.exp1.role1.title">Back End Developer</span>
                                 </div>
-                                <span class="exp-role-location" data-i18n="experience.exp1.role1.location">Surabaya, Jawa Timur, Indonesia · Remote</span>
+                                <div class="exp-role-row">
+                                    <span class="exp-label" data-i18n="experience.labels.type">Tipe:</span>
+                                    <span class="exp-value"><span class="role-type badge bg-primary" data-i18n="experience.exp1.role1.type">Full-time</span></span>
+                                </div>
+                                <div class="exp-role-row">
+                                    <span class="exp-label" data-i18n="experience.labels.project">Proyek:</span>
+                                    <span class="exp-value exp-project-name"><i class="fas fa-folder-open me-1"></i><span data-i18n="experience.exp1.role1.project">Supply Chain Management (SCM) - MPM Motor</span></span>
+                                </div>
+                                <div class="exp-role-row">
+                                    <span class="exp-label" data-i18n="experience.labels.location">Lokasi:</span>
+                                    <span class="exp-value" data-i18n="experience.exp1.role1.location">Surabaya, Jawa Timur, Indonesia · Remote</span>
+                                </div>
                             </div>
-                            <p class="exp-card-project"><i class="fas fa-folder-open me-1"></i><span data-i18n="experience.exp1.role1.project">Supply Chain Management (SCM) - MPM Motor</span></p>
-                            <p class="exp-role-summary" data-i18n="experience.exp1.role1.summary">Membangun dan mengelola arsitektur backend terdistribusi yang memisahkan lapisan persistensi data dengan lapisan orkestrasi bisnis.</p>
-                            <ul class="exp-role-achievements">
-                                <li data-i18n="experience.exp1.role1.achievement1">Business Logic Orchestration: Merancang lapisan federasi bisnis untuk mengelola workflow kompleks, aturan domain, dan transformasi data secara terpusat.</li>
-                                <li data-i18n="experience.exp1.role1.achievement2">Distributed Transactions: Mengimplementasikan Saga Pattern untuk menjamin eventual consistency dan atomisitas pada transaksi bisnis yang melibatkan berbagai microservices.</li>
-                                <li data-i18n="experience.exp1.role1.achievement3">Data Persistence Management: Mengelola authoritative gateway untuk standarisasi seluruh siklus hidup data (CRUD) guna memastikan performa tinggi dan integritas penyimpanan.</li>
-                                <li data-i18n="experience.exp1.role1.achievement4">Code Governance: Mengintegrasikan SonarQube dalam alur pengembangan untuk analisis kode statis, memastikan keamanan aplikasi, dan menjaga standar clean code.</li>
-                            </ul>
-                            <div class="exp-card-skills">
-                                <span class="tech-badge">Microservices Architecture</span>
-                                <span class="tech-badge">Saga Pattern</span>
-                                <span class="tech-badge">SonarQube</span>
-                                <span class="tech-badge">Data Persistence Layer</span>
+                            <button class="btn-view-detail" data-detail="besmart-role1-detail">
+                                <i class="fas fa-chevron-down me-1"></i><span data-i18n="experience.viewDetails">Lihat Detail</span>
+                            </button>
+                            <div class="exp-detail-content" id="besmart-role1-detail">
+                                <p class="exp-role-summary" data-i18n="experience.exp1.role1.summary">Membangun dan mengelola arsitektur backend terdistribusi yang memisahkan lapisan persistensi data dengan lapisan orkestrasi bisnis.</p>
+                                <ul class="exp-role-achievements">
+                                    <li data-i18n="experience.exp1.role1.achievement1">Business Logic Orchestration: Merancang lapisan federasi bisnis untuk mengelola workflow kompleks, aturan domain, dan transformasi data secara terpusat.</li>
+                                    <li data-i18n="experience.exp1.role1.achievement2">Distributed Transactions: Mengimplementasikan Saga Pattern untuk menjamin eventual consistency dan atomisitas pada transaksi bisnis yang melibatkan berbagai microservices.</li>
+                                    <li data-i18n="experience.exp1.role1.achievement3">Data Persistence Management: Mengelola authoritative gateway untuk standarisasi seluruh siklus hidup data (CRUD) guna memastikan performa tinggi dan integritas penyimpanan.</li>
+                                    <li data-i18n="experience.exp1.role1.achievement4">Code Governance: Mengintegrasikan SonarQube dalam alur pengembangan untuk analisis kode statis, memastikan keamanan aplikasi, dan menjaga standar clean code.</li>
+                                </ul>
+                                <div class="exp-card-skills">
+                                    <span class="tech-badge">Microservices Architecture</span>
+                                    <span class="tech-badge">Saga Pattern</span>
+                                    <span class="tech-badge">SonarQube</span>
+                                    <span class="tech-badge">Data Persistence Layer</span>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- Role 2: DMS (hidden by default) -->
+                        <!-- Role 2: DMS -->
                         <div class="exp-role-content" id="besmart-role2">
-                            <div class="exp-role-top">
-                                <div>
-                                    <h5 class="exp-role-title" data-i18n="experience.exp1.role2.title">Back End Developer</h5>
-                                    <span class="role-type badge bg-secondary" data-i18n="experience.exp1.role2.type">Contract</span>
+                            <div class="exp-role-summary-info">
+                                <div class="exp-role-row">
+                                    <span class="exp-label" data-i18n="experience.labels.position">Posisi:</span>
+                                    <span class="exp-value" data-i18n="experience.exp1.role2.title">Back End Developer</span>
                                 </div>
-                                <span class="exp-role-location" data-i18n="experience.exp1.role2.location">Jakarta Utara, Jakarta, Indonesia · On-site</span>
+                                <div class="exp-role-row">
+                                    <span class="exp-label" data-i18n="experience.labels.type">Tipe:</span>
+                                    <span class="exp-value"><span class="role-type badge bg-secondary" data-i18n="experience.exp1.role2.type">Contract</span></span>
+                                </div>
+                                <div class="exp-role-row">
+                                    <span class="exp-label" data-i18n="experience.labels.project">Proyek:</span>
+                                    <span class="exp-value exp-project-name"><i class="fas fa-folder-open me-1"></i><span data-i18n="experience.exp1.role2.project">Dealer Management System (DMS) - Toyota Astra Motor</span></span>
+                                </div>
+                                <div class="exp-role-row">
+                                    <span class="exp-label" data-i18n="experience.labels.location">Lokasi:</span>
+                                    <span class="exp-value" data-i18n="experience.exp1.role2.location">Jakarta Utara, Jakarta, Indonesia · On-site</span>
+                                </div>
                             </div>
-                            <p class="exp-card-project"><i class="fas fa-folder-open me-1"></i><span data-i18n="experience.exp1.role2.project">Dealer Management System (DMS) - Toyota Astra Motor</span></p>
-                            <p class="exp-role-summary" data-i18n="experience.exp1.role2.summary">Berperan dalam pemeliharaan sistem dan dukungan teknis untuk memastikan akurasi data dan stabilitas aplikasi.</p>
-                            <ul class="exp-role-achievements">
-                                <li data-i18n="experience.exp1.role2.achievement1">Query Optimization: Menganalisis dan melakukan troubleshooting pada Stored Procedures (SP) yang kompleks untuk memperbaiki kesalahan logika dan meningkatkan efisiensi penarikan data.</li>
-                                <li data-i18n="experience.exp1.role2.achievement2">Technical Support & Bug Fixing: Berkolaborasi dengan tim QA/Tester dalam mengidentifikasi root cause dari laporan inkonsistensi data serta melakukan perbaikan pada sisi backend code.</li>
-                            </ul>
-                            <div class="exp-card-skills">
-                                <span class="tech-badge">ASP.NET</span>
-                                <span class="tech-badge">Microsoft SQL Server</span>
+                            <button class="btn-view-detail" data-detail="besmart-role2-detail">
+                                <i class="fas fa-chevron-down me-1"></i><span data-i18n="experience.viewDetails">Lihat Detail</span>
+                            </button>
+                            <div class="exp-detail-content" id="besmart-role2-detail">
+                                <p class="exp-role-summary" data-i18n="experience.exp1.role2.summary">Berperan dalam pemeliharaan sistem dan dukungan teknis untuk memastikan akurasi data dan stabilitas aplikasi.</p>
+                                <ul class="exp-role-achievements">
+                                    <li data-i18n="experience.exp1.role2.achievement1">Query Optimization: Menganalisis dan melakukan troubleshooting pada Stored Procedures (SP) yang kompleks untuk memperbaiki kesalahan logika dan meningkatkan efisiensi penarikan data.</li>
+                                    <li data-i18n="experience.exp1.role2.achievement2">Technical Support & Bug Fixing: Berkolaborasi dengan tim QA/Tester dalam mengidentifikasi root cause dari laporan inkonsistensi data serta melakukan perbaikan pada sisi backend code.</li>
+                                </ul>
+                                <div class="exp-card-skills">
+                                    <span class="tech-badge">ASP.NET</span>
+                                    <span class="tech-badge">Microsoft SQL Server</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Company 2: PT Bali Towerindo Sentra Tbk (1 role) -->
-                <div class="col-lg-5 col-md-12 mb-4 fade-up">
+                <!-- Company 2: PT Bali Towerindo Sentra Tbk -->
+                <div class="col-lg-6 col-md-12 mb-4 fade-up">
                     <div class="exp-card">
                         <div class="exp-card-header">
-                            <h4 class="exp-card-company-name">PT Bali Towerindo Sentra Tbk</h4>
-                            <span class="exp-card-tenure" data-i18n="experience.exp2.duration">7 bln</span>
+                            <div class="exp-company-info">
+                                <h4 class="exp-card-company-name">PT Bali Towerindo Sentra Tbk</h4>
+                                <span class="exp-card-tenure" data-i18n="experience.exp2.duration">7 bln</span>
+                            </div>
                         </div>
 
                         <!-- Single Timeline -->
                         <div class="exp-timeline">
                             <button class="exp-timeline-item active" data-target="towerindo-role1">
                                 <span class="exp-timeline-dot"></span>
-                                <span class="exp-timeline-label" data-i18n="experience.exp2.period">Des 2023 - Jun 2024</span>
+                                <span class="exp-timeline-label" data-i18n="experience.exp2.period">Des 2023 - Jun 2024 · 7 bln</span>
                             </button>
                         </div>
 
                         <div class="exp-role-content active" id="towerindo-role1">
-                            <div class="exp-role-top">
-                                <div>
-                                    <h5 class="exp-role-title" data-i18n="experience.exp2.title">IT & Research and Development Intern</h5>
-                                    <span class="role-type badge bg-info" data-i18n="experience.exp2.type">Internship</span>
+                            <div class="exp-role-summary-info">
+                                <div class="exp-role-row">
+                                    <span class="exp-label" data-i18n="experience.labels.position">Posisi:</span>
+                                    <span class="exp-value" data-i18n="experience.exp2.title">IT & Research and Development Intern</span>
                                 </div>
-                                <span class="exp-role-location">Jakarta, Indonesia · On-site</span>
+                                <div class="exp-role-row">
+                                    <span class="exp-label" data-i18n="experience.labels.type">Tipe:</span>
+                                    <span class="exp-value"><span class="role-type badge bg-info" data-i18n="experience.exp2.type">Magang</span></span>
+                                </div>
+                                <div class="exp-role-row">
+                                    <span class="exp-label" data-i18n="experience.labels.project">Proyek:</span>
+                                    <span class="exp-value exp-project-name"><i class="fas fa-folder-open me-1"></i>CCTV Analytics</span>
+                                </div>
+                                <div class="exp-role-row">
+                                    <span class="exp-label" data-i18n="experience.labels.location">Lokasi:</span>
+                                    <span class="exp-value">Jakarta, Indonesia · On-site</span>
+                                </div>
                             </div>
-                            <p class="exp-card-project"><i class="fas fa-folder-open me-1"></i>CCTV Analytics</p>
-                            <p class="exp-role-summary" data-i18n="experience.exp2.summary">Membantu tim R&D dalam mengembangkan CCTV Analytics menggunakan Python, PyTorch, YOLO, CNN models, OpenCV, FastAPI, dan PostgreSQL.</p>
-                            <p class="exp-role-project-label"><strong data-i18n="experience.exp2.projectsLabel">Proyek yang dikerjakan:</strong></p>
-                            <ul class="exp-role-achievements">
-                                <li data-i18n="experience.exp2.project1">LPR (License Plate Recognition) Project</li>
-                                <li data-i18n="experience.exp2.project2">Fire and Smoke Detection Project</li>
-                                <li data-i18n="experience.exp2.project3">Crowd Detection Project</li>
-                                <li data-i18n="experience.exp2.project4">CCTV Web Report (Log)</li>
-                            </ul>
-                            <div class="exp-card-skills">
-                                <span class="tech-badge">Python</span>
-                                <span class="tech-badge">PyTorch</span>
-                                <span class="tech-badge">YOLO</span>
-                                <span class="tech-badge">CNN</span>
-                                <span class="tech-badge">OpenCV</span>
-                                <span class="tech-badge">FastAPI</span>
-                                <span class="tech-badge">PostgreSQL</span>
+                            <button class="btn-view-detail" data-detail="towerindo-role1-detail">
+                                <i class="fas fa-chevron-down me-1"></i><span data-i18n="experience.viewDetails">Lihat Detail</span>
+                            </button>
+                            <div class="exp-detail-content" id="towerindo-role1-detail">
+                                <p class="exp-role-summary" data-i18n="experience.exp2.summary">Membantu tim R&D dalam mengembangkan CCTV Analytics menggunakan Python, PyTorch, YOLO, CNN models, OpenCV, FastAPI, dan PostgreSQL.</p>
+                                <p class="exp-role-project-label"><strong data-i18n="experience.exp2.projectsLabel">Proyek yang dikerjakan:</strong></p>
+                                <ul class="exp-role-achievements">
+                                    <li data-i18n="experience.exp2.project1">LPR (License Plate Recognition) Project</li>
+                                    <li data-i18n="experience.exp2.project2">Fire and Smoke Detection Project</li>
+                                    <li data-i18n="experience.exp2.project3">Crowd Detection Project</li>
+                                    <li data-i18n="experience.exp2.project4">CCTV Web Report (Log)</li>
+                                </ul>
+                                <div class="exp-card-skills">
+                                    <span class="tech-badge">Python</span>
+                                    <span class="tech-badge">PyTorch</span>
+                                    <span class="tech-badge">YOLO</span>
+                                    <span class="tech-badge">CNN</span>
+                                    <span class="tech-badge">OpenCV</span>
+                                    <span class="tech-badge">FastAPI</span>
+                                    <span class="tech-badge">PostgreSQL</span>
+                                </div>
                             </div>
                         </div>
                     </div>

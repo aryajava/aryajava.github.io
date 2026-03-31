@@ -267,6 +267,23 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             const target = document.getElementById(targetId);
             if (target) target.classList.add('active');
+
+            // Reset all View Detail states in this card
+            card.querySelectorAll('.btn-view-detail').forEach(b => b.classList.remove('active'));
+            card.querySelectorAll('.exp-detail-content').forEach(d => d.classList.remove('show'));
+        });
+    });
+
+    // View Detail Toggle
+    document.querySelectorAll('.btn-view-detail').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const detailId = this.getAttribute('data-detail');
+            const detail = document.getElementById(detailId);
+            if (detail) {
+                const isOpen = detail.classList.contains('show');
+                detail.classList.toggle('show');
+                this.classList.toggle('active');
+            }
         });
     });
 });

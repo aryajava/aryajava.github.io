@@ -52,6 +52,10 @@ const translations = {
         "experience.exp2.project3": "Crowd Detection Project",
         "experience.exp2.project4": "CCTV Web Report (Log)",
         "experience.viewDetails": "View Details",
+        "experience.labels.position": "Position:",
+        "experience.labels.type": "Type:",
+        "experience.labels.project": "Project:",
+        "experience.labels.location": "Location:",
 
         // Projects
         "projects.title": "Featured Projects",
@@ -199,6 +203,10 @@ const translations = {
         "experience.exp2.project3": "Crowd Detection Project",
         "experience.exp2.project4": "CCTV Web Report (Log)",
         "experience.viewDetails": "Lihat Detail",
+        "experience.labels.position": "Posisi:",
+        "experience.labels.type": "Tipe:",
+        "experience.labels.project": "Proyek:",
+        "experience.labels.location": "Lokasi:",
 
         // Projects
         "projects.title": "Proyek Unggulan",
