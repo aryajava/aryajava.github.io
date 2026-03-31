@@ -277,7 +277,6 @@ a {
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-md);
     padding: 2rem;
-    height: 100%;
     display: flex;
     flex-direction: column;
     border: 1px solid rgba(108, 99, 255, 0.1);
@@ -421,6 +420,22 @@ a {
 @keyframes fadeInRole {
     from { opacity: 0; transform: translateY(8px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+/* Role Head - Title + Badge */
+.exp-role-head {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.6rem;
+    flex-wrap: wrap;
+}
+
+.exp-role-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin: 0;
 }
 
 /* Summary Info - Always visible */
