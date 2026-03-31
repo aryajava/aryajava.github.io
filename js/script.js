@@ -250,4 +250,23 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const skillsSection = document.getElementById('skills');
     if (skillsSection) skillsObserver.observe(skillsSection);
+
+    // Experience Timeline Switching
+    document.querySelectorAll('.exp-timeline-item').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const card = this.closest('.exp-card');
+            const targetId = this.getAttribute('data-target');
+
+            // Deactivate all timeline buttons in this card
+            card.querySelectorAll('.exp-timeline-item').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+
+            // Hide all role contents in this card, show target
+            card.querySelectorAll('.exp-role-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            const target = document.getElementById(targetId);
+            if (target) target.classList.add('active');
+        });
+    });
 });
