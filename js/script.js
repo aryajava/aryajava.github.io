@@ -74,7 +74,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-document.querySelectorAll('.fade-up, .project-card, .skill-category, .contact-card').forEach(el => {
+document.querySelectorAll('.fade-up, .project-card, .skill-category, .contact-card, .experience-card').forEach(el => {
     observer.observe(el);
     if (!el.classList.contains('fade-up')) {
         el.classList.add('fade-up');
