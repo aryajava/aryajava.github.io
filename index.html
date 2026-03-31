@@ -29,6 +29,9 @@
                             <a class="nav-link" href="#home" data-i18n="nav.home">Home</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="#about" data-i18n="nav.about">Tentang</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="#experience" data-i18n="nav.experience">Pengalaman</a>
                         </li>
                         <li class="nav-item">
@@ -88,27 +91,65 @@
     <!-- Hero Section -->
     <header class="hero-section">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-8">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
                     <h2 class="hero-title">
                         <span data-i18n="hero.title"> Hai, saya </span>
-                        <span class="highlight" data-i18n="hero.name">Nama Anda</span>
+                        <span class="highlight" data-i18n="hero.name">Muhammad Arya Java</span>
                     </h2>
-                    <h2 class="hero-subtitle" data-i18n="hero.subtitle">Backend Engineer | Microservices Specialist</h2>
+                    <h2 class="hero-subtitle" data-i18n="hero.subtitle">Backend Engineer</h2>
                     <p class="hero-text" data-i18n="hero.description">Deskripsi singkat tentang apa yang Anda lakukan dan keahlian khusus Anda.</p>
                     <div class="hero-cta">
-                        <a href="#projects" class="btn btn-primary btn-lg" data-i18n="hero.cta.projects">Lihat Proyek</a>
-                        <a href="#contact" class="btn btn-outline-light btn-lg" data-i18n="hero.cta.contact">Hubungi Saya</a>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="hero-image-container">
-                        <img src="img/pp_muhammad-arya-java.jpg" alt="Profile Picture Muhammad Arya Java" class="hero-image">
+                        <a href="#about" class="btn btn-primary btn-lg" data-i18n="hero.cta.about">Tentang Saya</a>
+                        <a href="#projects" class="btn btn-outline-light btn-lg" data-i18n="hero.cta.projects">Lihat Proyek</a>
                     </div>
                 </div>
             </div>
         </div>
     </header>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="about.title">Tentang Saya</h2>
+            <p class="section-subtitle" data-i18n="about.subtitle">Mengenal lebih dekat</p>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="about-card fade-up">
+                        <p class="about-text" data-i18n="about.description">Lulusan S1 Teknik Informatika dari Universitas Budi Luhur dengan fokus kuat pada Back-End Development dan Distributed Systems. Berpengalaman dalam membangun microservices yang scalable dengan pengalaman langsung mengimplementasikan Saga Pattern untuk transaksi kompleks serta memastikan kualitas kode melalui analisis statis SonarQube.</p>
+                        <div class="about-info">
+                            <div class="about-info-item">
+                                <i class="fas fa-graduation-cap"></i>
+                                <div>
+                                    <span class="about-info-label" data-i18n="about.education">Pendidikan</span>
+                                    <span class="about-info-value">S1 Teknik Informatika — Universitas Budi Luhur</span>
+                                </div>
+                            </div>
+                            <div class="about-info-item">
+                                <i class="fas fa-briefcase"></i>
+                                <div>
+                                    <span class="about-info-label" data-i18n="about.current">Saat Ini</span>
+                                    <span class="about-info-value">Back End Developer — <a href="https://besmart-universal.com/" target="_blank" rel="noopener noreferrer" class="about-link">PT. Besmart Global Indonesia</a></span>
+                                </div>
+                            </div>
+                            <div class="about-info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <span class="about-info-label" data-i18n="about.location">Lokasi</span>
+                                    <span class="about-info-value" data-i18n="about.locationValue">Jakarta, Indonesia</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="about-cta">
+                            <a href="#contact" class="btn btn-primary" data-i18n="hero.cta.contact">Hubungi Saya</a>
+                            <a href="#experience" class="btn btn-outline-primary" data-i18n="about.cta.experience">Lihat Pengalaman</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Experience Section -->
     <section id="experience" class="experience-section">
@@ -122,7 +163,7 @@
                     <div class="exp-card">
                         <div class="exp-card-header">
                             <div class="exp-company-info">
-                                <h4 class="exp-card-company-name">PT. Besmart Global Indonesia</h4>
+                                <h4 class="exp-card-company-name"><a href="https://besmart-universal.com/" target="_blank" rel="noopener noreferrer" class="exp-company-link">PT. Besmart Global Indonesia</a></h4>
                                 <span class="exp-card-tenure">9 mos</span>
                             </div>
                         </div>
@@ -149,7 +190,7 @@
                                 </div>
                                 <div class="exp-role-row">
                                     <span class="exp-label" data-i18n="experience.labels.project">Proyek:</span>
-                                    <span class="exp-value exp-project-name"><i class="fas fa-folder-open me-1"></i><span data-i18n="experience.exp1.role1.project">Supply Chain Management (SCM) - MPM Motor</span></span>
+                                    <span class="exp-value exp-project-name"><i class="fas fa-folder-open me-1"></i><span data-i18n="experience.exp1.role1.project">Supply Chain Management (SCM)</span> — <a href="https://www.mpmhondajatim.com/" target="_blank" rel="noopener noreferrer" class="exp-project-link">MPM Motor</a></span>
                                 </div>
                                 <div class="exp-role-row">
                                     <span class="exp-label" data-i18n="experience.labels.location">Lokasi:</span>
@@ -185,7 +226,7 @@
                                 </div>
                                 <div class="exp-role-row">
                                     <span class="exp-label" data-i18n="experience.labels.project">Proyek:</span>
-                                    <span class="exp-value exp-project-name"><i class="fas fa-folder-open me-1"></i><span data-i18n="experience.exp1.role2.project">Dealer Management System (DMS) - Toyota Astra Motor</span></span>
+                                    <span class="exp-value exp-project-name"><i class="fas fa-folder-open me-1"></i><span data-i18n="experience.exp1.role2.project">Dealer Management System (DMS)</span> — <a href="https://www.toyota.astra.co.id/" target="_blank" rel="noopener noreferrer" class="exp-project-link">Toyota Astra Motor</a></span>
                                 </div>
                                 <div class="exp-role-row">
                                     <span class="exp-label" data-i18n="experience.labels.location">Lokasi:</span>
@@ -215,7 +256,7 @@
                     <div class="exp-card">
                         <div class="exp-card-header">
                             <div class="exp-company-info">
-                                <h4 class="exp-card-company-name">PT Bali Towerindo Sentra Tbk</h4>
+                                <h4 class="exp-card-company-name"><a href="https://www.balitower.co.id/" target="_blank" rel="noopener noreferrer" class="exp-company-link">PT Bali Towerindo Sentra Tbk</a></h4>
                                 <span class="exp-card-tenure" data-i18n="experience.exp2.duration">7 bln</span>
                             </div>
                         </div>
