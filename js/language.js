@@ -51,6 +51,7 @@ const translations = {
         "experience.exp2.project2": "Fire and Smoke Detection Project",
         "experience.exp2.project3": "Crowd Detection Project",
         "experience.exp2.project4": "CCTV Web Report (Log)",
+        "experience.viewDetails": "View Details",
 
         // Projects
         "projects.title": "Featured Projects",
@@ -197,6 +198,7 @@ const translations = {
         "experience.exp2.project2": "Fire and Smoke Detection Project",
         "experience.exp2.project3": "Crowd Detection Project",
         "experience.exp2.project4": "CCTV Web Report (Log)",
+        "experience.viewDetails": "Lihat Detail",
 
         // Projects
         "projects.title": "Proyek Unggulan",
