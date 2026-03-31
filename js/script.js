@@ -8,7 +8,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         
         if (targetElement) {
             window.scrollTo({
-                top: targetElement.offsetTop - 80,
+                top: targetElement.offsetTop - 70,
                 behavior: 'smooth'
             });
             
@@ -21,70 +21,64 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Add shadow to navbar on scroll
+// Navbar scroll effect & back-to-top button
 window.addEventListener('scroll', function() {
     const navbar = document.querySelector('.navbar');
+    const backToTop = document.getElementById('backToTop');
+    
     if (window.scrollY > 50) {
-        navbar.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.1)';
+        navbar.classList.add('scrolled');
     } else {
-        navbar.style.boxShadow = 'none';
+        navbar.classList.remove('scrolled');
+    }
+    
+    if (backToTop) {
+        if (window.scrollY > 400) {
+            backToTop.classList.add('show');
+        } else {
+            backToTop.classList.remove('show');
+        }
     }
 });
+
+// Back to top button
+const backToTopBtn = document.getElementById('backToTop');
+if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
 
 // Form submission
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        
-        // Here you would typically send the form data to a server
-        // For demo purposes, we'll just show an alert
         alert('Thank you for your message! I will get back to you soon.');
         this.reset();
     });
 }
 
-// Animation on scroll
-function animateOnScroll() {
-    const elements = document.querySelectorAll('.project-card, .skill-category, .contact-method');
-    
-    elements.forEach(element => {
-        const elementPosition = element.getBoundingClientRect().top;
-        const screenPosition = window.innerHeight / 1.2;
-        
-        if (elementPosition < screenPosition) {
-            element.style.opacity = '1';
-            element.style.transform = 'translateY(0)';
+// Scroll reveal animation using IntersectionObserver
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
         }
     });
-}
+}, observerOptions);
 
-// Set initial state for animated elements
-document.querySelectorAll('.project-card, .skill-category, .contact-method').forEach(element => {
-    element.style.opacity = '0';
-    element.style.transform = 'translateY(30px)';
-    element.style.transition = 'all 0.6s ease';
-});
-
-// Run animation function on scroll and load
-window.addEventListener('scroll', animateOnScroll);
-window.addEventListener('load', animateOnScroll);
-
-// Smooth scrolling for internal links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        if (targetElement) {
-            window.scrollTo({
-                top: targetElement.offsetTop - 80,
-                behavior: 'smooth'
-            });
-        }
-    });
+document.querySelectorAll('.fade-up, .project-card, .skill-category, .contact-card').forEach(el => {
+    observer.observe(el);
+    if (!el.classList.contains('fade-up')) {
+        el.classList.add('fade-up');
+    }
 });
 
 // Initialize project image carousels
@@ -93,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const carousels = document.querySelectorAll('.project-carousel .carousel');
     carousels.forEach(carousel => {
         new bootstrap.Carousel(carousel, {
-            interval: 10000, // 10 detik
+            interval: 10000,
             ride: 'carousel',
             wrap: true,
             pause: 'hover'
@@ -218,4 +212,42 @@ function initLightbox() {
 // Initialize lightbox when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     initLightbox();
+    
+    // Active nav link highlighting
+    const sections = document.querySelectorAll('section, header');
+    const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+    
+    window.addEventListener('scroll', function() {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            if (window.scrollY >= sectionTop) {
+                current = section.getAttribute('id') || '';
+            }
+        });
+        
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + current) {
+                link.classList.add('active');
+            }
+        });
+    });
+    
+    // Animate progress bars when skills section is visible
+    const skillsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.querySelectorAll('.progress-bar').forEach(bar => {
+                    const width = bar.style.width;
+                    bar.style.width = '0';
+                    setTimeout(() => { bar.style.width = width; }, 100);
+                });
+                skillsObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+    
+    const skillsSection = document.getElementById('skills');
+    if (skillsSection) skillsObserver.observe(skillsSection);
 });
