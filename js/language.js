@@ -41,6 +41,16 @@ const translations = {
         "experience.exp1.role2.summary": "Played a role in system maintenance and technical support to ensure data accuracy and application stability.",
         "experience.exp1.role2.achievement1": "Query Optimization: Analyzed and troubleshot complex Stored Procedures (SP) to fix logic errors and improve data retrieval efficiency.",
         "experience.exp1.role2.achievement2": "Technical Support & Bug Fixing: Collaborated with QA/Tester teams to identify root causes of data inconsistency reports and performed fixes on the backend code.",
+        "experience.exp2.duration": "7 mos",
+        "experience.exp2.title": "IT & Research and Development Intern",
+        "experience.exp2.type": "Internship",
+        "experience.exp2.period": "Dec 2023 - Jun 2024 \u00b7 7 mos",
+        "experience.exp2.summary": "Assisted the R&D team in developing CCTV Analytics using Python, PyTorch, YOLO, CNN models, OpenCV, FastAPI, and PostgreSQL.",
+        "experience.exp2.projectsLabel": "Projects involved:",
+        "experience.exp2.project1": "LPR (License Plate Recognition) Project",
+        "experience.exp2.project2": "Fire and Smoke Detection Project",
+        "experience.exp2.project3": "Crowd Detection Project",
+        "experience.exp2.project4": "CCTV Web Report (Log)",
 
         // Projects
         "projects.title": "Featured Projects",
@@ -177,6 +187,16 @@ const translations = {
         "experience.exp1.role2.summary": "Berperan dalam pemeliharaan sistem dan dukungan teknis untuk memastikan akurasi data dan stabilitas aplikasi.",
         "experience.exp1.role2.achievement1": "Query Optimization: Menganalisis dan melakukan troubleshooting pada Stored Procedures (SP) yang kompleks untuk memperbaiki kesalahan logika dan meningkatkan efisiensi penarikan data.",
         "experience.exp1.role2.achievement2": "Technical Support & Bug Fixing: Berkolaborasi dengan tim QA/Tester dalam mengidentifikasi root cause dari laporan inkonsistensi data serta melakukan perbaikan pada sisi backend code.",
+        "experience.exp2.duration": "7 bln",
+        "experience.exp2.title": "IT & Research and Development Intern",
+        "experience.exp2.type": "Magang",
+        "experience.exp2.period": "Des 2023 - Jun 2024 \u00b7 7 bln",
+        "experience.exp2.summary": "Membantu tim R&D dalam mengembangkan CCTV Analytics menggunakan Python, PyTorch, YOLO, CNN models, OpenCV, FastAPI, dan PostgreSQL.",
+        "experience.exp2.projectsLabel": "Proyek yang dikerjakan:",
+        "experience.exp2.project1": "LPR (License Plate Recognition) Project",
+        "experience.exp2.project2": "Fire and Smoke Detection Project",
+        "experience.exp2.project3": "Crowd Detection Project",
+        "experience.exp2.project4": "CCTV Web Report (Log)",
 
         // Projects
         "projects.title": "Proyek Unggulan",
