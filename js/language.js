@@ -337,7 +337,7 @@ document.getElementById('languageSwitchMobile').addEventListener('change', funct
 
 // Inisialisasi bahasa saat halaman dimuat
 document.addEventListener('DOMContentLoaded', function() {
-    const savedLang = localStorage.getItem('language') || 'en';
+    const savedLang = localStorage.getItem('language') || 'id';
     document.documentElement.lang = savedLang;
     switchLanguage(savedLang);
     
