@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://aryajava.github.io/sitemap.txt
 Sitemap: https://aryajava.github.io/sitemap.xml
