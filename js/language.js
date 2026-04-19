@@ -37,7 +37,6 @@ const translations = {
         "experience.subtitle": "My professional career journey",
         "experience.exp1.role1.title": "Back End Developer",
         "experience.exp1.role1.type": "Full-time",
-        "experience.exp1.role1.period": "Aug 2025 - Present · 8 mos",
         "experience.exp1.role1.location": "Surabaya, East Java, Indonesia · Remote",
         "experience.exp1.role1.project": "Supply Chain Management (SCM)",
         "experience.exp1.role1.summary": "Building and managing distributed backend architecture that separates the data persistence layer from the business orchestration layer.",
@@ -47,16 +46,13 @@ const translations = {
         "experience.exp1.role1.achievement4": "Code Governance: Integrated SonarQube into the development pipeline for static code analysis, ensuring application security and maintaining clean code standards.",
         "experience.exp1.role2.title": "Back End Developer",
         "experience.exp1.role2.type": "Contract",
-        "experience.exp1.role2.period": "Jul 2025 - Aug 2025 · 2 mos",
         "experience.exp1.role2.location": "North Jakarta, Jakarta, Indonesia · On-site",
         "experience.exp1.role2.project": "Dealer Management System (DMS)",
         "experience.exp1.role2.summary": "Played a role in system maintenance and technical support to ensure data accuracy and application stability.",
         "experience.exp1.role2.achievement1": "Query Optimization: Analyzed and troubleshot complex Stored Procedures (SP) to fix logic errors and improve data retrieval efficiency.",
         "experience.exp1.role2.achievement2": "Technical Support & Bug Fixing: Collaborated with QA/Tester teams to identify root causes of data inconsistency reports and performed fixes on the backend code.",
-        "experience.exp2.duration": "7 mos",
         "experience.exp2.title": "IT & Research and Development Intern",
         "experience.exp2.type": "Internship",
-        "experience.exp2.period": "Dec 2023 - Jun 2024 \u00b7 7 mos",
         "experience.exp2.summary": "Assisted the R&D team in developing CCTV Analytics using Python, PyTorch, YOLO, CNN models, OpenCV, FastAPI, and PostgreSQL.",
         "experience.exp2.projectsLabel": "Projects involved:",
         "experience.exp2.project1": "LPR (License Plate Recognition) Project",
@@ -180,7 +176,6 @@ const translations = {
         "experience.subtitle": "Perjalanan karir profesional saya",
         "experience.exp1.role1.title": "Back End Developer",
         "experience.exp1.role1.type": "Full-time",
-        "experience.exp1.role1.period": "Agu 2025 - Sekarang · 8 bln",
         "experience.exp1.role1.location": "Surabaya, Jawa Timur, Indonesia · Remote",
         "experience.exp1.role1.project": "Supply Chain Management (SCM)",
         "experience.exp1.role1.summary": "Membangun dan mengelola arsitektur backend terdistribusi yang memisahkan lapisan persistensi data dengan lapisan orkestrasi bisnis.",
@@ -190,16 +185,13 @@ const translations = {
         "experience.exp1.role1.achievement4": "Code Governance: Mengintegrasikan SonarQube dalam alur pengembangan untuk analisis kode statis, memastikan keamanan aplikasi, dan menjaga standar clean code.",
         "experience.exp1.role2.title": "Back End Developer",
         "experience.exp1.role2.type": "Kontrak",
-        "experience.exp1.role2.period": "Jul 2025 - Agu 2025 · 2 bln",
         "experience.exp1.role2.location": "Jakarta Utara, Jakarta, Indonesia · On-site",
         "experience.exp1.role2.project": "Dealer Management System (DMS)",
         "experience.exp1.role2.summary": "Berperan dalam pemeliharaan sistem dan dukungan teknis untuk memastikan akurasi data dan stabilitas aplikasi.",
         "experience.exp1.role2.achievement1": "Query Optimization: Menganalisis dan melakukan troubleshooting pada Stored Procedures (SP) yang kompleks untuk memperbaiki kesalahan logika dan meningkatkan efisiensi penarikan data.",
         "experience.exp1.role2.achievement2": "Technical Support & Bug Fixing: Berkolaborasi dengan tim QA/Tester dalam mengidentifikasi root cause dari laporan inkonsistensi data serta melakukan perbaikan pada sisi backend code.",
-        "experience.exp2.duration": "7 bln",
         "experience.exp2.title": "IT & Research and Development Intern",
         "experience.exp2.type": "Magang",
-        "experience.exp2.period": "Des 2023 - Jun 2024 \u00b7 7 bln",
         "experience.exp2.summary": "Membantu tim R&D dalam mengembangkan CCTV Analytics menggunakan Python, PyTorch, YOLO, CNN models, OpenCV, FastAPI, dan PostgreSQL.",
         "experience.exp2.projectsLabel": "Proyek yang dikerjakan:",
         "experience.exp2.project1": "LPR (License Plate Recognition) Project",
@@ -288,6 +280,72 @@ const translations = {
     }
 };
 
+const experiencePeriodLabels = {
+    id: {
+        present: 'Sekarang',
+        monthOne: 'bln',
+        monthMany: 'bln'
+    },
+    en: {
+        present: 'Present',
+        monthOne: 'mo',
+        monthMany: 'mos'
+    }
+};
+
+function parseExperienceDate(value) {
+    if (!value) return null;
+    return new Date(`${value}T00:00:00`);
+}
+
+function formatExperienceMonth(date, lang) {
+    const locale = lang === 'id' ? 'id-ID' : 'en-US';
+    return new Intl.DateTimeFormat(locale, {
+        month: 'short',
+        year: 'numeric'
+    }).format(date);
+}
+
+function getExperienceMonthCount(startDate, endDate) {
+    const start = parseExperienceDate(startDate);
+    const end = parseExperienceDate(endDate) || new Date();
+
+    if (!start || Number.isNaN(start.getTime()) || Number.isNaN(end.getTime())) {
+        return null;
+    }
+
+    const monthDiff = (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth());
+    return Math.max(monthDiff + 1, 1);
+}
+
+function formatExperienceDuration(monthCount, lang) {
+    const labels = experiencePeriodLabels[lang] || experiencePeriodLabels.id;
+    const suffix = monthCount === 1 ? labels.monthOne : labels.monthMany;
+    return `${monthCount} ${suffix}`;
+}
+
+function updateExperiencePeriods(lang) {
+    document.querySelectorAll('[data-period-start]').forEach(element => {
+        const startDate = element.getAttribute('data-period-start');
+        const endDate = element.getAttribute('data-period-end');
+        const periodTemplate = element.getAttribute('data-period-template') || 'range';
+        const months = getExperienceMonthCount(startDate, endDate);
+
+        if (months === null) {
+            return;
+        }
+
+        const labels = experiencePeriodLabels[lang] || experiencePeriodLabels.id;
+        const startLabel = formatExperienceMonth(parseExperienceDate(startDate), lang);
+        const endLabel = endDate ? formatExperienceMonth(parseExperienceDate(endDate), lang) : labels.present;
+        const durationLabel = formatExperienceDuration(months, lang);
+
+        element.textContent = periodTemplate === 'duration'
+            ? durationLabel
+            : `${startLabel} - ${endLabel} · ${durationLabel}`;
+    });
+}
+
 // Fungsi untuk mengganti bahasa
 function switchLanguage(lang) {
     // Simpan preferensi bahasa
@@ -322,6 +380,8 @@ function switchLanguage(lang) {
     document.querySelectorAll('.resume-link').forEach(link => {
         link.href = resumeLinks[lang];
     });
+
+    updateExperiencePeriods(lang);
 }
 
 // Event listener untuk toggle bahasa
